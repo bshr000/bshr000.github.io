@@ -4,7 +4,7 @@
 
 项目采用内容驱动架构。新增文章时只需创建 MDX 文件，列表页、详情页、首页预览、站点地图和静态路由会在构建阶段自动生成，无需手动修改页面组件。
 
-[GitHub 仓库](https://github.com/bshr000/Profile) · [内容规范](content/README.md) · [设计说明](DESIGN.md)
+[个人主页](https://bshr000.github.io/) · [GitHub 仓库](https://github.com/bshr000/bshr000.github.io) · [内容规范](content/README.md) · [设计说明](DESIGN.md)
 
 ## 项目特性
 
@@ -52,8 +52,8 @@
 ### 安装与运行
 
 ```bash
-git clone https://github.com/bshr000/Profile.git
-cd Profile
+git clone https://github.com/bshr000/bshr000.github.io.git
+cd bshr000.github.io
 pnpm install
 pnpm dev
 ```
@@ -152,7 +152,7 @@ export const siteConfig = {
   name: "Xuyang Zhao",
   title: "Xuyang Zhao | Personal Portfolio",
   description: "站点描述",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://username.github.io",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://bshr000.github.io",
   email: "your-email@example.com",
   github: "https://github.com/username",
 };
@@ -162,8 +162,8 @@ export const siteConfig = {
 
 | 变量 | 用途 | 示例 |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | 站点完整公开地址，用于 Metadata 与 Sitemap | `https://bshr000.github.io/Profile` |
-| `NEXT_PUBLIC_BASE_PATH` | 子路径部署时的路径前缀 | `/Profile` |
+| `NEXT_PUBLIC_SITE_URL` | 站点完整公开地址，用于 Metadata 与 Sitemap | `https://bshr000.github.io` |
+| `NEXT_PUBLIC_BASE_PATH` | 子路径部署时的路径前缀 | 空字符串（个人主页） |
 
 本地开发通常不需要设置 `NEXT_PUBLIC_BASE_PATH`。
 
@@ -182,7 +182,7 @@ export const siteConfig = {
 仓库已经包含 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)。推送到 `main` 分支后，GitHub Actions 会自动：
 
 1. 安装 pnpm 与项目依赖。
-2. 根据仓库类型计算 `NEXT_PUBLIC_BASE_PATH` 和 `NEXT_PUBLIC_SITE_URL`。
+2. 使用主页根路径与正式地址 `https://bshr000.github.io`，并运行 ESLint 检查。
 3. 构建静态站点。
 4. 上传 `out/` 并部署到 GitHub Pages。
 
@@ -211,3 +211,9 @@ Settings → Pages → Build and deployment → Source → GitHub Actions
 ---
 
 Built with Next.js, TypeScript and MDX.
+
+## 正式主页维护
+
+正式地址为 https://bshr000.github.io/，部署路径保持为空。日常修改在本地预览后运行 `pnpm lint` 和 `pnpm build`，提交并推送到 `main` 即会自动上线。较大改动建议先在独立分支完成，合并到 `main` 后发布。
+
+在 GitHub Actions 中确认 Deploy GitHub Pages 成功，再检查首页、文章直达链接、图片与简历下载。不要手动修改 `out/`；它是构建生成的产物。若发布后需要回退，使用 `git revert <提交哈希>` 并推送，保留历史并触发重新部署。
