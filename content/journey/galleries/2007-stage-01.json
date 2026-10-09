@@ -1,802 +1,460 @@
 {
-  "images": [
-    {
-      "src": "/images/journey/2007/001.webp",
-      "alt": "中峪联小与童年记忆，照片 001",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/2007/002.webp",
-      "alt": "中峪联小与童年记忆，照片 002",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/2007/003.webp",
-      "alt": "中峪联小与童年记忆，照片 003",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/2007/004.webp",
-      "alt": "中峪联小与童年记忆，照片 004",
-      "width": 320,
-      "height": 240
-    },
-    {
-      "src": "/images/journey/2007/005.webp",
-      "alt": "中峪联小与童年记忆，照片 005",
-      "width": 320,
-      "height": 240
-    },
-    {
-      "src": "/images/journey/2007/006.webp",
-      "alt": "中峪联小与童年记忆，照片 006",
-      "width": 320,
-      "height": 240
-    },
-    {
-      "src": "/images/journey/2007/007.webp",
-      "alt": "中峪联小与童年记忆，照片 007",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/008.webp",
-      "alt": "中峪联小与童年记忆，照片 008",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/009.webp",
-      "alt": "中峪联小与童年记忆，照片 009",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/010.webp",
-      "alt": "中峪联小与童年记忆，照片 010",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/011.webp",
-      "alt": "中峪联小与童年记忆，照片 011",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/012.webp",
-      "alt": "中峪联小与童年记忆，照片 012",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/013.webp",
-      "alt": "中峪联小与童年记忆，照片 013",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/014.webp",
-      "alt": "中峪联小与童年记忆，照片 014",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/015.webp",
-      "alt": "中峪联小与童年记忆，照片 015",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/016.webp",
-      "alt": "中峪联小与童年记忆，照片 016",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/017.webp",
-      "alt": "中峪联小与童年记忆，照片 017",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/018.webp",
-      "alt": "中峪联小与童年记忆，照片 018",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/019.webp",
-      "alt": "中峪联小与童年记忆，照片 019",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/020.webp",
-      "alt": "中峪联小与童年记忆，照片 020",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/021.webp",
-      "alt": "中峪联小与童年记忆，照片 021",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/022.webp",
-      "alt": "中峪联小与童年记忆，照片 022",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/023.webp",
-      "alt": "中峪联小与童年记忆，照片 023",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/024.webp",
-      "alt": "中峪联小与童年记忆，照片 024",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/025.webp",
-      "alt": "中峪联小与童年记忆，照片 025",
-      "width": 480,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/026.webp",
-      "alt": "中峪联小与童年记忆，照片 026",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/027.webp",
-      "alt": "中峪联小与童年记忆，照片 027",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/028.webp",
-      "alt": "中峪联小与童年记忆，照片 028",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/029.webp",
-      "alt": "中峪联小与童年记忆，照片 029",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/030.webp",
-      "alt": "中峪联小与童年记忆，照片 030",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/031.webp",
-      "alt": "中峪联小与童年记忆，照片 031",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/032.webp",
-      "alt": "中峪联小与童年记忆，照片 032",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/033.webp",
-      "alt": "中峪联小与童年记忆，照片 033",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/034.webp",
-      "alt": "中峪联小与童年记忆，照片 034",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/035.webp",
-      "alt": "中峪联小与童年记忆，照片 035",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/036.webp",
-      "alt": "中峪联小与童年记忆，照片 036",
-      "width": 960,
-      "height": 467
-    },
-    {
-      "src": "/images/journey/2007/037.webp",
-      "alt": "中峪联小与童年记忆，照片 037",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/038.webp",
-      "alt": "中峪联小与童年记忆，照片 038",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/039.webp",
-      "alt": "中峪联小与童年记忆，照片 039",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/040.webp",
-      "alt": "中峪联小与童年记忆，照片 040",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/041.webp",
-      "alt": "中峪联小与童年记忆，照片 041",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/042.webp",
-      "alt": "中峪联小与童年记忆，照片 042",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/043.webp",
-      "alt": "中峪联小与童年记忆，照片 043",
-      "width": 639,
-      "height": 480
-    },
-    {
-      "src": "/images/journey/2007/044.webp",
-      "alt": "中峪联小与童年记忆，照片 044",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/045.webp",
-      "alt": "中峪联小与童年记忆，照片 045",
-      "width": 691,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/046.webp",
-      "alt": "中峪联小与童年记忆，照片 046",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/047.webp",
-      "alt": "中峪联小与童年记忆，照片 047",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/048.webp",
-      "alt": "中峪联小与童年记忆，照片 048",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/049.webp",
-      "alt": "中峪联小与童年记忆，照片 049",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/050.webp",
-      "alt": "中峪联小与童年记忆，照片 050",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/051.webp",
-      "alt": "中峪联小与童年记忆，照片 051",
-      "width": 640,
-      "height": 1129
-    },
-    {
-      "src": "/images/journey/2007/052.webp",
-      "alt": "中峪联小与童年记忆，照片 052",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/053.webp",
-      "alt": "中峪联小与童年记忆，照片 053",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/054.webp",
-      "alt": "中峪联小与童年记忆，照片 054",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/055.webp",
-      "alt": "中峪联小与童年记忆，照片 055",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/056.webp",
-      "alt": "中峪联小与童年记忆，照片 056",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/057.webp",
-      "alt": "中峪联小与童年记忆，照片 057",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/058.webp",
-      "alt": "中峪联小与童年记忆，照片 058",
-      "width": 640,
-      "height": 480
-    },
-    {
-      "src": "/images/journey/2007/059.webp",
-      "alt": "中峪联小与童年记忆，照片 059",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/060.webp",
-      "alt": "中峪联小与童年记忆，照片 060",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/061.webp",
-      "alt": "中峪联小与童年记忆，照片 061",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/062.webp",
-      "alt": "中峪联小与童年记忆，照片 062",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/063.webp",
-      "alt": "中峪联小与童年记忆，照片 063",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/064.webp",
-      "alt": "中峪联小与童年记忆，照片 064",
-      "width": 800,
-      "height": 537
-    },
-    {
-      "src": "/images/journey/2007/065.webp",
-      "alt": "中峪联小与童年记忆，照片 065",
-      "width": 800,
-      "height": 537
-    },
-    {
-      "src": "/images/journey/2007/066.webp",
-      "alt": "中峪联小与童年记忆，照片 066",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/067.webp",
-      "alt": "中峪联小与童年记忆，照片 067",
-      "width": 537,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/068.webp",
-      "alt": "中峪联小与童年记忆，照片 068",
-      "width": 800,
-      "height": 537
-    },
-    {
-      "src": "/images/journey/2007/069.webp",
-      "alt": "中峪联小与童年记忆，照片 069",
-      "width": 530,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/070.webp",
-      "alt": "中峪联小与童年记忆，照片 070",
-      "width": 800,
-      "height": 530
-    },
-    {
-      "src": "/images/journey/2007/071.webp",
-      "alt": "中峪联小与童年记忆，照片 071",
-      "width": 530,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/072.webp",
-      "alt": "中峪联小与童年记忆，照片 072",
-      "width": 530,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/073.webp",
-      "alt": "中峪联小与童年记忆，照片 073",
-      "width": 531,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/074.webp",
-      "alt": "中峪联小与童年记忆，照片 074",
-      "width": 531,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/075.webp",
-      "alt": "中峪联小与童年记忆，照片 075",
-      "width": 531,
-      "height": 800
-    },
-    {
-      "src": "/images/journey/2007/076.webp",
-      "alt": "中峪联小与童年记忆，照片 076",
-      "width": 800,
-      "height": 531
-    },
-    {
-      "src": "/images/journey/2007/077.webp",
-      "alt": "中峪联小与童年记忆，照片 077",
-      "width": 800,
-      "height": 531
-    },
-    {
-      "src": "/images/journey/2007/078.webp",
-      "alt": "中峪联小与童年记忆，照片 078",
-      "width": 800,
-      "height": 531
-    },
-    {
-      "src": "/images/journey/2007/079.webp",
-      "alt": "中峪联小与童年记忆，照片 079",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/080.webp",
-      "alt": "中峪联小与童年记忆，照片 080",
-      "width": 320,
-      "height": 240
-    },
-    {
-      "src": "/images/journey/2007/081.webp",
-      "alt": "中峪联小与童年记忆，照片 081",
-      "width": 677,
-      "height": 471
-    },
-    {
-      "src": "/images/journey/2007/082.webp",
-      "alt": "中峪联小与童年记忆，照片 082",
-      "width": 621,
-      "height": 467
-    },
-    {
-      "src": "/images/journey/2007/083.webp",
-      "alt": "中峪联小与童年记忆，照片 083",
-      "width": 599,
-      "height": 470
-    },
-    {
-      "src": "/images/journey/2007/084.webp",
-      "alt": "中峪联小与童年记忆，照片 084",
-      "width": 668,
-      "height": 481
-    },
-    {
-      "src": "/images/journey/2007/085.webp",
-      "alt": "中峪联小与童年记忆，照片 085",
-      "width": 671,
-      "height": 457
-    },
-    {
-      "src": "/images/journey/2007/086.webp",
-      "alt": "中峪联小与童年记忆，照片 086",
-      "width": 660,
-      "height": 466
-    },
-    {
-      "src": "/images/journey/2007/087.webp",
-      "alt": "中峪联小与童年记忆，照片 087",
-      "width": 663,
-      "height": 468
-    },
-    {
-      "src": "/images/journey/2007/088.webp",
-      "alt": "中峪联小与童年记忆，照片 088",
-      "width": 677,
-      "height": 471
-    },
-    {
-      "src": "/images/journey/2007/089.webp",
-      "alt": "中峪联小与童年记忆，照片 089",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/090.webp",
-      "alt": "中峪联小与童年记忆，照片 090",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/091.webp",
-      "alt": "中峪联小与童年记忆，照片 091",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/092.webp",
-      "alt": "中峪联小与童年记忆，照片 092",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/093.webp",
-      "alt": "中峪联小与童年记忆，照片 093",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/094.webp",
-      "alt": "中峪联小与童年记忆，照片 094",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/095.webp",
-      "alt": "中峪联小与童年记忆，照片 095",
-      "width": 1080,
-      "height": 1440
-    },
-    {
-      "src": "/images/journey/2007/096.webp",
-      "alt": "中峪联小与童年记忆，照片 096",
-      "width": 541,
-      "height": 444
-    },
-    {
-      "src": "/images/journey/2007/097.webp",
-      "alt": "中峪联小与童年记忆，照片 097",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/098.webp",
-      "alt": "中峪联小与童年记忆，照片 098",
-      "width": 963,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/099.webp",
-      "alt": "中峪联小与童年记忆，照片 099",
-      "width": 963,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/100.webp",
-      "alt": "中峪联小与童年记忆，照片 100",
-      "width": 960,
-      "height": 1280
-    },
-    {
-      "src": "/images/journey/2007/101.webp",
-      "alt": "中峪联小与童年记忆，照片 101",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/102.webp",
-      "alt": "中峪联小与童年记忆，照片 102",
-      "width": 600,
-      "height": 388
-    },
-    {
-      "src": "/images/journey/2007/103.webp",
-      "alt": "中峪联小与童年记忆，照片 103",
-      "width": 719,
-      "height": 560
-    },
-    {
-      "src": "/images/journey/2007/104.webp",
-      "alt": "中峪联小与童年记忆，照片 104",
-      "width": 513,
-      "height": 590
-    },
-    {
-      "src": "/images/journey/2007/105.webp",
-      "alt": "中峪联小与童年记忆，照片 105",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/106.webp",
-      "alt": "中峪联小与童年记忆，照片 106",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/107.webp",
-      "alt": "中峪联小与童年记忆，照片 107",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/108.webp",
-      "alt": "中峪联小与童年记忆，照片 108",
-      "width": 639,
-      "height": 480
-    },
-    {
-      "src": "/images/journey/2007/109.webp",
-      "alt": "中峪联小与童年记忆，照片 109",
-      "width": 639,
-      "height": 480
-    },
-    {
-      "src": "/images/journey/2007/110.webp",
-      "alt": "中峪联小与童年记忆，照片 110",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/111.webp",
-      "alt": "中峪联小与童年记忆，照片 111",
-      "width": 240,
-      "height": 320
-    },
-    {
-      "src": "/images/journey/2007/112.webp",
-      "alt": "中峪联小与童年记忆，照片 112",
-      "width": 670,
-      "height": 466
-    },
-    {
-      "src": "/images/journey/2007/113.webp",
-      "alt": "中峪联小与童年记忆，照片 113",
-      "width": 672,
-      "height": 469
-    },
-    {
-      "src": "/images/journey/2007/114.webp",
-      "alt": "中峪联小与童年记忆，照片 114",
-      "width": 674,
-      "height": 472
-    },
-    {
-      "src": "/images/journey/2007/115.webp",
-      "alt": "中峪联小与童年记忆，照片 115",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/116.webp",
-      "alt": "中峪联小与童年记忆，照片 116",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/117.webp",
-      "alt": "中峪联小与童年记忆，照片 117",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/118.webp",
-      "alt": "中峪联小与童年记忆，照片 118",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/119.webp",
-      "alt": "中峪联小与童年记忆，照片 119",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/120.webp",
-      "alt": "中峪联小与童年记忆，照片 120",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/121.webp",
-      "alt": "中峪联小与童年记忆，照片 121",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/122.webp",
-      "alt": "中峪联小与童年记忆，照片 122",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/123.webp",
-      "alt": "中峪联小与童年记忆，照片 123",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/124.webp",
-      "alt": "中峪联小与童年记忆，照片 124",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/125.webp",
-      "alt": "中峪联小与童年记忆，照片 125",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/126.webp",
-      "alt": "中峪联小与童年记忆，照片 126",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "src": "/images/journey/2007/127.webp",
-      "alt": "中峪联小与童年记忆，照片 127",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/128.webp",
-      "alt": "中峪联小与童年记忆，照片 128",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/129.webp",
-      "alt": "中峪联小与童年记忆，照片 129",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/130.webp",
-      "alt": "中峪联小与童年记忆，照片 130",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/131.webp",
-      "alt": "中峪联小与童年记忆，照片 131",
-      "width": 640,
-      "height": 853
-    },
-    {
-      "src": "/images/journey/2007/132.webp",
-      "alt": "中峪联小与童年记忆，照片 132",
-      "width": 853,
-      "height": 640
-    },
-    {
-      "src": "/images/journey/2007/133.webp",
-      "alt": "中峪联小与童年记忆，照片 133",
-      "width": 720,
-      "height": 960
+  "presentation": "chapters",
+  "label": "小学",
+  "introduction": "从校门口到教室，从一张合影到另一张。把小学时期留下的照片，慢慢翻一遍。",
+  "coverImages": [
+    "/images/journey/小学/小学23.webp",
+    "/images/journey/小学/小学48.webp",
+    "/images/journey/小学/小学18.webp"
+  ],
+  "sections": [
+    {
+      "title": "校园与同学",
+      "description": "校门、教室，还有站在一起的我们。",
+      "images": [
+        {
+          "src": "/images/journey/小学/小学18.webp",
+          "alt": "校门前的路",
+          "caption": "校门前的路",
+          "width": 668,
+          "height": 481,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学20.webp",
+          "alt": "树荫下的校园",
+          "caption": "树荫下的校园",
+          "width": 671,
+          "height": 457,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学23.webp",
+          "alt": "站在一起的合影",
+          "caption": "站在一起的合影",
+          "width": 660,
+          "height": 466,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/小学/小学24.webp",
+          "alt": "同一处地方，再拍一张",
+          "caption": "同一处地方，再拍一张",
+          "width": 663,
+          "height": 468,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学19.webp",
+          "alt": "教室里的纸帽与笑容",
+          "caption": "教室里的纸帽与笑容",
+          "width": 621,
+          "height": 467,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学22.webp",
+          "alt": "戴着纸帽的合影",
+          "caption": "戴着纸帽的合影",
+          "width": 599,
+          "height": 470,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学21.webp",
+          "alt": "教室里的集体合影",
+          "caption": "教室里的集体合影",
+          "width": 677,
+          "height": 471,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学25.webp",
+          "alt": "镜头前的不同表情",
+          "caption": "镜头前的不同表情",
+          "width": 677,
+          "height": 471,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "title": "走到户外",
+      "description": "沿着路向前走，在树下、田边留下几张合影。",
+      "images": [
+        {
+          "src": "/images/journey/小学/小学16.webp",
+          "alt": "沿着路排起长队",
+          "caption": "沿着路排起长队",
+          "width": 800,
+          "height": 600,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/小学/小学26.webp",
+          "alt": "树旁的三人合影",
+          "caption": "树旁的三人合影",
+          "width": 672,
+          "height": 469,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学27.webp",
+          "alt": "树荫下，靠在一起",
+          "caption": "树荫下，靠在一起",
+          "width": 674,
+          "height": 472,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学32.webp",
+          "alt": "换一个表情，再拍一张",
+          "caption": "换一个表情，再拍一张",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学28.webp",
+          "alt": "户外的双人合影",
+          "caption": "户外的双人合影",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学17.webp",
+          "alt": "田边的三人合影",
+          "caption": "田边的三人合影",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学30.webp",
+          "alt": "田边留下的另一张照片",
+          "caption": "田边留下的另一张照片",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学29.webp",
+          "alt": "坐在草地上",
+          "caption": "坐在草地上",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学31.webp",
+          "alt": "树旁的坐姿照片",
+          "caption": "树旁的坐姿照片",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学33.webp",
+          "alt": "坐在一起的几个人",
+          "caption": "坐在一起的几个人",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学1.webp",
+          "alt": "与装扮人物的合影",
+          "caption": "与装扮人物的合影",
+          "width": 853,
+          "height": 640,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学7.webp",
+          "alt": "雕像旁的合影",
+          "caption": "雕像旁的合影",
+          "width": 853,
+          "height": 640,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "title": "镜头前的模样",
+      "description": "红领巾、花衬衫和不同的姿势，镜头留下了那时的模样。",
+      "images": [
+        {
+          "src": "/images/journey/小学/小学48.webp",
+          "alt": "红领巾与敬礼",
+          "caption": "红领巾与敬礼",
+          "width": 531,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学49.webp",
+          "alt": "红色背景前的另一张照片",
+          "caption": "红色背景前的另一张照片",
+          "width": 531,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学50.webp",
+          "alt": "背着书包",
+          "caption": "背着书包",
+          "width": 531,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学51.webp",
+          "alt": "自行车旁的照片",
+          "caption": "自行车旁的照片",
+          "width": 800,
+          "height": 531,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学52.webp",
+          "alt": "镜头前的手势",
+          "caption": "镜头前的手势",
+          "width": 800,
+          "height": 531,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学53.webp",
+          "alt": "书架背景前的照片",
+          "caption": "书架背景前的照片",
+          "width": 800,
+          "height": 531,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/小学/小学34.webp",
+          "alt": "花衬衫与红帽子",
+          "caption": "花衬衫与红帽子",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学35.webp",
+          "alt": "镜头前的半身照",
+          "caption": "镜头前的半身照",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学36.webp",
+          "alt": "抱着篮球",
+          "caption": "抱着篮球",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学37.webp",
+          "alt": "把篮球举过头顶",
+          "caption": "把篮球举过头顶",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学38.webp",
+          "alt": "坐在篮球旁",
+          "caption": "坐在篮球旁",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学39.webp",
+          "alt": "格纹帽与红色马甲",
+          "caption": "格纹帽与红色马甲",
+          "width": 800,
+          "height": 537,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学40.webp",
+          "alt": "伸出手的姿势",
+          "caption": "伸出手的姿势",
+          "width": 800,
+          "height": 537,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学41.webp",
+          "alt": "侧身看向镜头",
+          "caption": "侧身看向镜头",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学42.webp",
+          "alt": "抱着红色吉他",
+          "caption": "抱着红色吉他",
+          "width": 537,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学43.webp",
+          "alt": "红色吉他的近景",
+          "caption": "红色吉他的近景",
+          "width": 800,
+          "height": 537,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学54.webp",
+          "alt": "抱着吉他的全身照",
+          "caption": "抱着吉他的全身照",
+          "width": 144,
+          "height": 226,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学44.webp",
+          "alt": "浅色衬衫的全身照",
+          "caption": "浅色衬衫的全身照",
+          "width": 530,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学45.webp",
+          "alt": "双手放在头后的照片",
+          "caption": "双手放在头后的照片",
+          "width": 800,
+          "height": 530,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学46.webp",
+          "alt": "浅色衬衫的另一张照片",
+          "caption": "浅色衬衫的另一张照片",
+          "width": 530,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学47.webp",
+          "alt": "道具背景前的照片",
+          "caption": "道具背景前的照片",
+          "width": 530,
+          "height": 800,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学13.webp",
+          "alt": "举起手的随拍",
+          "caption": "举起手的随拍",
+          "width": 320,
+          "height": 240,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学14.webp",
+          "alt": "镜头前的近照",
+          "caption": "镜头前的近照",
+          "width": 320,
+          "height": 240,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学15.webp",
+          "alt": "微微侧着头",
+          "caption": "微微侧着头",
+          "width": 320,
+          "height": 240,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学8.webp",
+          "alt": "戴着眼镜的照片",
+          "caption": "戴着眼镜的照片",
+          "width": 639,
+          "height": 480,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "title": "那时的照片装饰",
+      "description": "日历、相框、星光和贴纸，也保留在这本相册里。",
+      "images": [
+        {
+          "src": "/images/journey/小学/小学3.webp",
+          "alt": "夹在绿叶间的照片拼贴",
+          "caption": "夹在绿叶间的照片拼贴",
+          "width": 600,
+          "height": 388,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/小学/小学2.webp",
+          "alt": "日历里的双人照",
+          "caption": "日历里的双人照",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学4.webp",
+          "alt": "星光相框里的合照",
+          "caption": "星光相框里的合照",
+          "width": 719,
+          "height": 560,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学5.webp",
+          "alt": "书页样式的照片装饰",
+          "caption": "书页样式的照片装饰",
+          "width": 513,
+          "height": 590,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学6.webp",
+          "alt": "黑白纹理里的眼镜照片",
+          "caption": "黑白纹理里的眼镜照片",
+          "width": 639,
+          "height": 480,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学9.webp",
+          "alt": "贴纸围绕的肖像",
+          "caption": "贴纸围绕的肖像",
+          "width": 800,
+          "height": 600,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学10.webp",
+          "alt": "贴纸肖像的小幅版本之一",
+          "caption": "贴纸肖像的小幅版本之一",
+          "width": 144,
+          "height": 226,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/小学/小学11.webp",
+          "alt": "贴纸肖像的小幅版本之二",
+          "caption": "贴纸肖像的小幅版本之二",
+          "width": 144,
+          "height": 226,
+          "featured": false
+        }
+      ]
     }
   ]
 }

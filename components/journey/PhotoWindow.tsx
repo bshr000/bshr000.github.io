@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./PhotoWindow.module.css";
 
 interface PhotoWindowProps {
+  autoPlay?: boolean;
   images: string[];
   title: string;
   priority?: boolean;
@@ -15,7 +16,7 @@ interface PhotoWindowProps {
 
 const formatCount = (value: number) => String(value).padStart(2, "0");
 
-export function PhotoWindow({ images, title, priority = false, galleryHref }: PhotoWindowProps) {
+export function PhotoWindow({ images, title, priority = false, galleryHref, autoPlay = true }: PhotoWindowProps) {
   const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [previous, setPrevious] = useState<number | null>(null);
@@ -53,12 +54,12 @@ export function PhotoWindow({ images, title, priority = false, galleryHref }: Ph
   }, [current, showImage]);
 
   useEffect(() => {
-    if (imageCount < 2 || paused) return;
+    if (!autoPlay || imageCount < 2 || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const interval = window.setInterval(showNext, 7000);
     return () => window.clearInterval(interval);
-  }, [imageCount, paused, showNext]);
+  }, [imageCount, paused, showNext, autoPlay]);
 
   useEffect(() => {
     return () => {

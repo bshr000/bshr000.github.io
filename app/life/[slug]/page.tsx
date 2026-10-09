@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { ContentRenderer } from "@/components/ContentRenderer";
-import { ChinaCityMap } from "@/components/life/ChinaCityMap";
+import PlacesPage from "@/components/life/travel-map/PlacesPage";
 import { getAllContent, getContent } from "@/lib/content";
 import { withBasePath } from "@/lib/site";
 import styles from "./page.module.css";
@@ -42,6 +42,8 @@ export default async function LifeDetail({
 
   if (!item) notFound();
 
+  if (item.slug === "places") return <PlacesPage />;
+
   return (
     <div className={`container ${styles.page}`}>
       <nav className={styles.pageNav} aria-label="Life pages">
@@ -58,9 +60,7 @@ export default async function LifeDetail({
         <p className={styles.description}>{item.description}</p>
       </header>
 
-      {item.slug === "places" ? (
-        <ChinaCityMap />
-      ) : item.cover && (
+      {item.cover && (
         <figure className={styles.cover}>
           <Image
             src={withBasePath(item.cover)}

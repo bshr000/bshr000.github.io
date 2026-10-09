@@ -10,6 +10,7 @@ import {
   getJourneyStory,
 } from "@/lib/journey";
 import { PhotoWindow } from "@/components/journey/PhotoWindow";
+import { ArchiveHeader } from "@/components/ArchiveHeader";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -22,10 +23,10 @@ export default function JourneyPage() {
 
   return (
     <div className={styles.page}>
-      <section className={`container ${styles.hero}`} aria-labelledby="journey-title">
-        <h1 id="journey-title">Journey</h1>
-        <p>翻开一个人的旧相册。</p>
-      </section>
+      <ArchiveHeader title="Journey" statement="翻开那些属于时间与人生的章节。"
+        english="Places I've been. Chapters I've lived. Moments I keep."
+        description="A living archive of time, memory, places, and becoming."
+        background="/images/headers/journey.png" />
 
       <section className={`container ${styles.archive}`} aria-label="Memory timeline">
         {items.length > 0 ? (
@@ -42,6 +43,7 @@ export default function JourneyPage() {
 
               return (
                 <article
+                  id={`memory-${item.slug}`}
                   className={styles.memoryEntry}
                   data-side={side}
                   data-variant={index % 3}
@@ -71,6 +73,7 @@ export default function JourneyPage() {
                       title={item.title}
                       priority={index === 0}
                       galleryHref={galleryHref}
+                      autoPlay={gallery?.presentation !== "chapters"}
                     />
 
                     <div className={styles.memoryText}>

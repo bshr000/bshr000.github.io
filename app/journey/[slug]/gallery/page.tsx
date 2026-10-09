@@ -12,6 +12,7 @@ import {
 } from "@/lib/journey";
 import type { JourneyGalleryImage, JourneyGalleryLayout } from "@/types/content";
 import styles from "./page.module.css";
+import { ChapterAlbum } from "@/components/journey/ChapterAlbum";
 
 export const dynamicParams = false;
 
@@ -63,6 +64,18 @@ export default async function JourneyGalleryPage({
   if (!item || !gallery) notFound();
 
   const story = getJourneyStory(slug);
+  if (gallery.presentation === "chapters") {
+    return <ChapterAlbum
+      title={item.title}
+      period={item.date ?? item.year ?? ""}
+      location={item.location}
+      gallery={{ ...gallery, sections: gallery.sections.map((section) => ({
+        ...section, images: section.images.map((image) => ({ ...image, src: resolveJourneyImage(image.src) })),
+      })), images: gallery.images.map((image) => ({ ...image, src: resolveJourneyImage(image.src) })),
+      coverImages: gallery.coverImages?.map(resolveJourneyImage) }}
+      storyHref={story ? `/journey/${slug}/story` : undefined}
+    />;
+  }
   const date = item.date ?? item.year ?? "";
   let imageIndex = 0;
 

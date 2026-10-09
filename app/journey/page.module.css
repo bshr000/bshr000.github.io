@@ -2,26 +2,6 @@
     overflow: clip;
 }
 
-.hero {
-    padding-block: clamp(4rem, 8vw, 6rem) clamp(4rem, 7vw, 5.5rem);
-    border-bottom: var(--border-default);
-}
-
-.hero h1 {
-    max-width: 8ch;
-    font-size: clamp(4.5rem, 10vw, 7.5rem);
-    font-weight: var(--font-weight-medium);
-    line-height: .9;
-    letter-spacing: -.065em;
-}
-
-.hero p {
-    margin: var(--space-8) 0 0;
-    color: var(--color-text-secondary);
-    font-size: var(--text-lead);
-    line-height: var(--leading-lead);
-}
-
 .archive {
     padding-block: clamp(3rem, 6vw, 5rem) clamp(7rem, 12vw, 10rem);
 }
@@ -44,6 +24,7 @@
 }
 
 .memoryEntry {
+    scroll-margin-top: calc(var(--nav-height) + 1rem);
     --entry-offset: 0rem;
     position: relative;
     display: grid;
@@ -277,20 +258,6 @@
 }
 
 @media (max-width: 47.999rem) {
-    .hero {
-        padding-block: var(--space-16) var(--space-16);
-    }
-
-    .hero h1 {
-        font-size: clamp(4rem, 21vw, 5.5rem);
-        line-height: .94;
-    }
-
-    .hero p {
-        margin-top: var(--space-6);
-        font-size: 1.0625rem;
-    }
-
     .archive {
         padding-block: var(--space-8) var(--space-24);
     }

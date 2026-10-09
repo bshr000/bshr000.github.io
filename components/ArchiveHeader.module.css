@@ -1,0 +1,110 @@
+.header {
+    --archive-paper: #f8f6f1;
+    --archive-ink: #30352a;
+    --archive-muted: #6d7169;
+    --archive-serif: Georgia, "Times New Roman", "Songti SC", SimSun, serif;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--archive-paper);
+    color: var(--archive-ink);
+}
+
+.inner {
+    position: relative;
+    isolation: isolate;
+    padding-block: clamp(2.75rem, 4.5vw, 4.5rem) clamp(3rem, 5vw, 5rem);
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    inset: 0 calc(-1 * var(--layout-gutter)) 0 42%;
+    overflow: hidden;
+    opacity: .85;
+    mask-image: linear-gradient(to right, transparent, #000 32%),
+        linear-gradient(to bottom, transparent, #000 22%, #000 72%, transparent);
+    mask-composite: intersect;
+    pointer-events: none;
+}
+
+/* Only the right half of the supplied reference is visible; its printed
+   headings are outside this clipping window. All page copy remains HTML. */
+.background img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 200%;
+    max-width: none;
+    height: 100%;
+    object-fit: fill;
+}
+
+.copy {
+    position: relative;
+    max-width: 49rem;
+}
+
+.copy h1 {
+    margin: 0 0 1.5rem;
+    color: var(--archive-ink);
+    font-family: var(--archive-serif);
+    font-size: clamp(5rem, 8vw, 7.75rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -.065em;
+}
+
+.statement {
+    margin: 0;
+    font-family: var(--archive-serif);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    line-height: 1.5;
+    text-wrap: pretty;
+}
+
+.english {
+    margin: .5rem 0 0;
+    font-family: var(--archive-serif);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.55;
+    text-wrap: pretty;
+}
+
+.rule {
+    display: block;
+    width: 2rem;
+    height: 1px;
+    margin-block: 1.25rem;
+    background: currentColor;
+    opacity: .55;
+}
+
+.description {
+    margin: 0;
+    color: var(--archive-muted);
+    font-family: var(--archive-serif);
+    font-size: .9375rem;
+    line-height: 1.65;
+    text-wrap: pretty;
+}
+
+:global(html[data-theme="dark"]) .header {
+    --archive-paper: #141713;
+    --archive-ink: #ecece2;
+    --archive-muted: #b0b4a7;
+}
+
+:global(html[data-theme="dark"]) .background {
+    opacity: .27;
+    mix-blend-mode: luminosity;
+}
+
+@media (max-width: 47.999rem) {
+    .inner { padding-block: 2.5rem 3rem; }
+    .copy h1 { font-size: clamp(4rem, 15vw, 6rem); margin-bottom: 1.25rem; }
+    .statement { max-width: 24rem; font-size: 1.25rem; }
+    .english { max-width: 24rem; font-size: 1rem; }
+    .description { max-width: 22rem; font-size: .875rem; }
+    .background { inset-inline-start: 25%; opacity: .45; }
+}

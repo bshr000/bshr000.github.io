@@ -19,6 +19,8 @@ const galleryLayouts = new Set<JourneyGalleryLayout>(["wide", "left", "right", "
 
 type GalleryImageInput = string | {
   src?: unknown;
+  caption?: unknown;
+  featured?: unknown;
   alt?: unknown;
   width?: unknown;
   height?: unknown;
@@ -26,9 +28,14 @@ type GalleryImageInput = string | {
 };
 
 type GalleryFile = {
+  presentation?: string;
+  label?: string;
+  introduction?: string;
+  coverImages?: string[];
   images?: GalleryImageInput[];
   sections?: Array<{
     title?: unknown;
+    description?: unknown;
     images?: GalleryImageInput[];
   }>;
 };
@@ -57,6 +64,8 @@ function normalizeGalleryImage(image: GalleryImageInput): JourneyGalleryImage | 
 
   return {
     src: image.src,
+    caption: typeof image.caption === "string" ? image.caption : undefined,
+    featured: image.featured === true,
     alt: typeof image.alt === "string" ? image.alt : undefined,
     width: Number.isFinite(width) && width > 0 ? width : undefined,
     height: Number.isFinite(height) && height > 0 ? height : undefined,
@@ -99,6 +108,7 @@ export function getJourneyGallery(slug: string): JourneyGallery | undefined {
 
     sections.push({
       title: typeof section.title === "string" ? section.title : undefined,
+      description: typeof section.description === "string" ? section.description : undefined,
       images,
     });
   }
@@ -106,7 +116,13 @@ export function getJourneyGallery(slug: string): JourneyGallery | undefined {
   const images = sections.flatMap((section) => section.images);
   if (!images.length) return undefined;
 
-  return { slug, sections, images };
+  return {
+    slug, sections, images,
+    presentation: parsed.presentation === "chapters" ? "chapters" : undefined,
+    label: parsed.label,
+    introduction: parsed.introduction,
+    coverImages: parsed.coverImages,
+  };
 }
 
 export function getJourneyStory(slug: string): JourneyStory | undefined {
