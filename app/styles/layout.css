@@ -1,7 +1,6 @@
 .container,
 .page-container,
-.nav-inner,
-.footer-inner {
+.nav-inner {
     width: min(
         calc(100% - (var(--layout-gutter) * 2)),
         var(--layout-max)

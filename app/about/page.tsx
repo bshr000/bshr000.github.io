@@ -2,280 +2,87 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
-import { ArrowDownToLine } from "lucide-react";
-import type { IconType } from "react-icons";
-import { BsOpenai } from "react-icons/bs";
-import { DiPhotoshop } from "react-icons/di";
-import { PiMicrosoftPowerpointLogoFill } from "react-icons/pi";
-import {
-  SiClaude,
-  SiCss,
-  SiDocker,
-  SiGithub,
-  SiHuggingface,
-  SiHtml5,
-  SiLatex,
-  SiLinux,
-  SiNextdotjs,
-  SiOpencv,
-  SiPycharm,
-  SiPython,
-  SiPytorch,
-  SiQgis,
-} from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
-import { withBasePath } from "@/lib/site";
-import styles from "./page.module.css";
 import Image from "next/image";
+import { ArrowDownToLine, ArrowUpRight, Mail, Phone } from "lucide-react";
+import { education, photos, profile } from "@/lib/about";
+import { skillGroups } from "@/lib/about-skills";
+import { withBasePath } from "@/lib/site";
+import PhotoGallery from "@/components/about/PhotoGallery";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Xuyang Zhao 的个人介绍、研究方向、教育经历与联系方式。",
+  description: "认识赵旭阳：教育经历、研究方向、技能与生活片段。",
 };
 
-const resumeHref = withBasePath("/resume/xuyang-zhao-resume.pdf");
-const resumeExists = fs.existsSync(
-  path.join(process.cwd(), "public", "resume", "xuyang-zhao-resume.pdf"),
-);
-
-const profileMetadata = [
-  { label: "Research", value: "多模态目标检测" },
-  { label: "Based in", value: "北京市" },
-];
-
-const education = [
-  {
-    school: "中国科学院大学",
-    schoolEn: "University of Chinese Academy of Sciences",
-    degree: "硕士",
-    degreeEn: "Master",
-    department: "电子电气与通信工程学院 / 空天信息创新研究院",
-    courses: [
-      "计算机视觉",
-      "图像处理",
-      "模式识别与机器学习",
-      "深度学习",
-      "遥感影像处理",
-      "光纤通信新技术",
-    ],
-    rewards: ["三好学生", "三好学生", "三好学生标兵"],
-  },
-  {
-    school: "中国地质大学（北京）",
-    schoolEn: "China University of Geosciences, Beijing",
-    degree: "本科",
-    degreeEn: "Bachelor",
-    department: "地球物理与信息技术学院",
-    courses: [
-      "重力勘探",
-      "电法勘探",
-      "磁法勘探",
-      "地震勘探",
-      "核物理勘探",
-      "MATLAB 应用",
-      "数字信号处理",
-      "C 语言程序设计",
-      "线性代数",
-      "电子电工技术",
-    ],
-    rewards: [
-      "优秀班干部",
-      "三好学生",
-      "优秀毕业生",
-      "优秀毕业论文",
-      "全国大学生英语竞赛三等奖",
-      "全国大学生数学建模竞赛省一等奖",
-    ],
-  },
-];
-
-type Skill =
-  | { name: string; color: string; icon: IconType; mark?: never }
-  | { name: string; color: string; icon?: never; mark: string };
-
-const skills: Skill[] = [
-  { name: "Python", color: "#3776ab", icon: SiPython },
-  { name: "PyTorch", color: "#ee4c2c", icon: SiPytorch },
-  { name: "VS Code", color: "#007acc", icon: VscVscode },
-  { name: "PyCharm", color: "#21d789", icon: SiPycharm },
-  { name: "MATLAB", color: "#e16737", mark: "M" },
-  { name: "Linux", color: "#f2c94c", icon: SiLinux },
-  { name: "Photoshop", color: "#31a8ff", icon: DiPhotoshop },
-  { name: "剪映", color: "var(--color-text-primary)", mark: "剪" },
-  {
-    name: "GitHub",
-    color: "var(--color-text-primary)",
-    icon: SiGithub,
-  },
-  { name: "Docker", color: "#2496ed", icon: SiDocker },
-  { name: "WPS", color: "#d12f2f", mark: "WPS" },
-  {
-    name: "PowerPoint",
-    color: "#d24726",
-    icon: PiMicrosoftPowerpointLogoFill,
-  },
-  { name: "ChatGPT", color: "#10a37f", icon: BsOpenai },
-  { name: "Claude", color: "#d97757", icon: SiClaude },
-  {
-    name: "Next.js",
-    color: "var(--color-text-primary)",
-    icon: SiNextdotjs,
-  },
-  { name: "OpenCV", color: "#5c3ee8", icon: SiOpencv },
-  { name: "Hugging Face", color: "#e3ad00", icon: SiHuggingface },
-  { name: "HTML", color: "#e34f26", icon: SiHtml5 },
-  { name: "CSS", color: "#1572b6", icon: SiCss },
-  { name: "LaTeX", color: "#008080", icon: SiLatex },
-  { name: "QGIS", color: "#589632", icon: SiQgis },
-];
-
 export default function AboutPage() {
+  const resumeExists = fs.existsSync(path.join(process.cwd(), "public", profile.resume));
   return (
     <div className={styles.page}>
-      <section
-        className={`container ${styles.hero}`}
-        aria-labelledby="about-title"
-      >
-        <div className={styles.heroGrid}>
-          <header className={styles.identity}>
-            <h1 id="about-title">Xuyang Zhao</h1>
-            <p>研究方向：多模态目标检测</p>
-            <p>中共党员</p>
-            <p>电子信息硕士</p>
-            <p>山东临沂</p>
-            <p>Skills：</p>
-            <p>爱好：爬山、篮球 </p>
-          </header>
-
-          <div className={styles.portrait}>
-            <Image
-              src={withBasePath("/images/xuyang-zhao.webp")}
-              alt="Xuyang Zhao"
-              fill
-              priority
-              sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) 42vw, 32vw"
-              className={styles.portraitImage}
-            />
-          </div>
+      <header className={styles.banner}>
+        <Image src={withBasePath("/images/about/mountains.png")} alt="" fill priority sizes="100vw" className={styles.mountains} />
+        <div className={`container ${styles.bannerContent}`}>
+          <h1>Life is <span>True.</span></h1>
+          <p>路漫漫其修远兮，<br />吾将上下而求索。</p>
         </div>
+      </header>
 
-        <div className={styles.profileGrid}>
-          <div className={styles.philosophy}>
-            <span className={styles.profileLabel}>Personal principle</span>
-            <blockquote>
-              Life is <em>True.</em>
-            </blockquote>
-            <p> </p>
-          </div>
-
-          <div className={styles.metadata}>
-            <h2>Profile Metadata</h2>
-            <dl>
-              {profileMetadata.map((item) => (
-                <div key={item.label}>
-                  <dt>{item.label}</dt>
-                  <dd>{item.value}</dd>
-                </div>
-              ))}
-              <div>
-                <dt>Email</dt>
-                <dd>
-                  <a href="mailto:18369588966@163.com">18369588966@163.com</a>
-                </dd>
-              </div>
-              <div>
-                <dt>Phone</dt>
-                <dd>
-                  <a href="tel:+8618369588966">183 6958 8966</a>
-                </dd>
-              </div>
-              <div>
-                <dt>Resume</dt>
-                <dd>
-                  {resumeExists ? (
-                    <a className={styles.resumeLink} href={resumeHref} download>
-                      Download PDF
-                      <ArrowDownToLine size={14} aria-hidden="true" />
-                    </a>
-                  ) : (
-                    <span className={styles.unavailable}>PDF 待上传</span>
-                  )}
-                </dd>
-              </div>
+      <div className={`container ${styles.content}`}>
+        <section className={styles.introduction} aria-labelledby="profile-title">
+          <PhotoGallery photos={photos} />
+          <div className={styles.profile}>
+            <header className={styles.identity}>
+              <h2 id="profile-title">{profile.name}</h2>
+              <p>{profile.nameEn}</p>
+            </header>
+            <p className={styles.research}>{profile.qualification}<span> / </span>{profile.research}</p>
+            <dl className={styles.facts}>
+              <div><dt>现居</dt><dd>{profile.location}</dd></div>
+              <div><dt>家乡</dt><dd>{profile.hometown}</dd></div>
+              <div><dt>政治面貌</dt><dd>{profile.affiliation}</dd></div>
+              <div><dt>爱好</dt><dd>{profile.hobbies.join(" · ")}</dd></div>
             </dl>
+            <div className={styles.contact}>
+              <a href={`mailto:${profile.email}`}><Mail size={16} aria-hidden="true" /><span>{profile.email}</span><ArrowUpRight size={15} aria-hidden="true" /></a>
+              <a href={`tel:${profile.phone}`}><Phone size={16} aria-hidden="true" /><span>{profile.phoneDisplay}</span><ArrowUpRight size={15} aria-hidden="true" /></a>
+            </div>
+            {resumeExists && <div className={styles.resume}>
+              <a href={withBasePath(profile.resume)} target="_blank" rel="noreferrer">查看简历 <ArrowUpRight size={15} aria-hidden="true" /></a>
+              <a href={withBasePath(profile.resume)} download>下载 PDF <ArrowDownToLine size={15} aria-hidden="true" /></a>
+            </div>}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.education} aria-labelledby="education-title">
-        <div className="container">
-          <header className={styles.sectionHeading}>
-            <h2 id="education-title">Education</h2>
-            <p>教育经历</p>
-          </header>
-
-          <div className={styles.educationList}>
-            {education.map((item) => (
-              <article className={styles.educationEntry} key={item.school}>
-                <div className={styles.degree}>
-                  <span>{item.degreeEn}</span>
-                  <small>{item.degree}</small>
-                </div>
-                <div className={styles.educationContent}>
-                  <header>
-                    <div>
-                      <h3>{item.school}</h3>
-                      <p>{item.schoolEn}</p>
-                    </div>
-                  </header>
-                  <p className={styles.program}>{item.department}</p>
-                  <div className={styles.courses}>
-                    <span>主要课程</span>
-                    <p>{item.courses.join("、")}</p>
-                  </div>
-                  <div className={styles.rewards}>
-                    <span> 荣誉奖励 </span>
-                    <p>{item.rewards.join("、")}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
+        <section className={styles.section} aria-labelledby="education-title">
+          <header className={styles.sectionHeading}><h2 id="education-title">Education</h2><span>教育经历</span></header>
+          <div className={styles.timeline}>
+            {education.map(item => <article className={styles.educationEntry} key={item.school}>
+              <div className={styles.period}><p>{item.period}</p><span>{item.degree} / {item.degreeEn}</span></div>
+              <div className={styles.educationBody}>
+                <h3>{item.school}</h3><p className={styles.schoolEn}>{item.schoolEn}</p>
+                <p className={styles.department}>{item.department}</p>
+                <div className={styles.courseRow}><span>主要课程</span><div><p>{item.courses.slice(0, 3).join(" · ")}</p>
+                  {item.courses.length > 3 && <details><summary>更多课程</summary><p>{item.courses.slice(3).join(" · ")}</p></details>}
+                </div></div>
+                <div className={styles.courseRow}><span>荣誉奖励</span><p>{Array.from(new Set(item.rewards)).join(" · ")}</p></div>
+              </div>
+            </article>)}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.education} aria-labelledby="skills-title">
-        <div className="container">
-          <header className={styles.sectionHeading}>
-            <h2 id="skills-title">Skills</h2>
-            <p>技能</p>
-          </header>
-
-          <ul className={styles.skillsGrid}>
-            {skills.map((skill) => {
-              const Icon = skill.icon;
-
-              return (
-                <li
-                  className={styles.skillCard}
-                  key={skill.name}
-                  style={{ "--skill-color": skill.color } as CSSProperties}
-                  title={skill.name}
-                >
-                  <span className={styles.skillIcon} aria-hidden="true">
-                    {Icon ? (
-                      <Icon />
-                    ) : (
-                      <span className={styles.skillMark}>{skill.mark}</span>
-                    )}
-                  </span>
-                  <span className={styles.skillName}>{skill.name}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+        <section className={styles.section} aria-labelledby="skills-title">
+          <header className={styles.sectionHeading}><h2 id="skills-title">Skills</h2><span>技能与工具</span></header>
+          <div className={styles.skillGroups}>
+            {skillGroups.map(group => <div className={styles.skillGroup} key={group.title}>
+              <header><h3>{group.title}</h3><p>{group.description}</p></header>
+              <ul className={styles.skillList}>{group.skills.map(skill => {
+                const Icon = skill.icon;
+                return <li key={skill.name}><span className={styles.skillIcon} style={{ "--skill-color": skill.color } as CSSProperties} aria-hidden="true">{Icon ? <Icon /> : <span>{skill.mark}</span>}</span><span>{skill.name}</span></li>;
+              })}</ul>
+            </div>)}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
