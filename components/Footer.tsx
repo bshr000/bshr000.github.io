@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import styles from "./Footer.module.css";
+import { EmailContact } from "./EmailContact";
 
 export function Footer() {
   const year = new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Shanghai" }).format(new Date());
@@ -17,7 +18,7 @@ export function Footer() {
             <span aria-hidden="true">·</span>
             <a href={siteConfig.github}>GitHub</a>
             <span aria-hidden="true">·</span>
-            <a href={`mailto:${siteConfig.email}`}>Email</a>
+            <EmailContact email={siteConfig.email} />
           </nav>
           <span className={styles.divider} aria-hidden="true">|</span>
           <p className={styles.copyright}>© {year} · Build slowly, keep thoughtfully</p>

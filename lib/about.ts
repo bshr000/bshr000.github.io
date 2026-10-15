@@ -35,6 +35,7 @@ export const education = [
     degree: "硕士",
     period: "2023.09 — 2026.06",
     degreeEn: "Master",
+    transcript: "/documents/education/master-transcript.pdf",
     department: "电子电气与通信工程学院 / 空天信息创新研究院",
     courses: [
       "计算机视觉",
@@ -52,6 +53,7 @@ export const education = [
     degree: "本科",
     period: "2019.09 — 2023.06",
     degreeEn: "Bachelor",
+    transcript: "/documents/education/bachelor-transcript.pdf",
     department: "地球物理与信息技术学院",
     courses: [
       "重力勘探",

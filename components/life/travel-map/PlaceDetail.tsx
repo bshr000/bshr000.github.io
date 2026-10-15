@@ -11,6 +11,6 @@ export default function PlaceDetail({ place, journeys, onJourney, onClose }: { p
     <h2>{place.name} <span>{place.nameEn}</span></h2><p className={s.region}>{place.province} · {place.country}</p>
     <p className={s.description}>{place.description}</p>
     {place.firstVisit && <small>{place.firstVisit.slice(0, 4)}</small>}
-    {journeys.map(j => <button type="button" className={s.journeyLink} key={j.id} onClick={() => onJourney(j.id)}>{j.startDate.slice(0, 4)} · {j.title} <span>↗</span></button>)}
+    {journeys.map(j => <button type="button" className={s.journeyLink} key={j.id} onClick={() => onJourney(j.id)}>{j.startDate ? `${j.startDate.slice(0, 4)} · ` : ''}{j.title} <span>↗</span></button>)}
   </section>;
 }

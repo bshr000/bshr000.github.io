@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight, Plus } from "lucide-react";
 import { getWorks, getFeaturedWorks, workGroups, type WorkContent } from "@/lib/works";
 import { withBasePath } from "@/lib/site";
 import { ArchiveHeader } from "@/components/ArchiveHeader";
 import { ArchiveAnchors } from "@/components/works/ArchiveAnchors";
 import { WorkResources } from "@/components/works/WorkResources";
+import { WorkPublications } from "@/components/works/WorkPublications";
 import styles from "./page.module.css";
 export const metadata: Metadata = { title: "Works", description: "赵旭阳的研究、开源与工程实践：YOLO-CMFM、MVSDA、AirMOS，以及论文、专利和项目档案。" };
 function Authors({ text }: { text: string }) {
@@ -20,13 +21,14 @@ function ArchiveEntry({ item }: { item: WorkContent }) {
       {item.authors && <p className={styles.authors}><Authors text={item.authors} /></p>}
       {item.venue && <p className={styles.meta}>{item.venue}</p>}
       {item.applicationNumber && <p className={styles.meta}>申请号 · {item.applicationNumber}</p>}
-      {!item.authors && <p className={styles.meta}>{item.description}</p>}
+      {item.description && <p className={styles.meta}>{item.description}</p>}
       {item.role && <p className={styles.meta}>{item.role}</p>}
       {item.award && <p className={styles.meta}>{item.award}</p>}
       {item.citation && <p className={styles.citation}><Authors text={item.citation} /></p>}
-      <WorkResources item={item} />
+      {item.detailLink ? <div className={styles.resources}><Link href={`/works/${item.slug}`}>详情介绍 <ArrowUpRight size={13} aria-hidden="true" /></Link></div> : <WorkResources item={item} />}
+      <WorkPublications item={item} />
     </div>
-    <span className={styles.entryLabel}>{item.featured ? "SELECTED" : item.level ?? (item.kind === "paper" ? "PAPER" : item.kind === "patent" ? "PATENT" : "PROJECT")}</span>
+    <span className={styles.entryLabel}>{item.kind === "engineering" ? (item.projectType ?? "PROJECT") : item.featured ? "SELECTED" : item.level ?? item.activityType ?? (item.kind === "paper" ? "PAPER" : item.kind === "patent" ? "PATENT" : item.kind === "competition" ? "COMPETITION" : "PROJECT")}</span>
   </li>;
 }
 export default function WorksPage() {
@@ -47,7 +49,7 @@ export default function WorksPage() {
         </Link>
         <div className={styles.featureMeta}><span>{String(index + 1).padStart(2, "0")}</span><span>{item.subtitle}</span></div>
         <h3><Link href={`/works/${item.slug}`}>{item.title}</Link></h3><p>{item.description}</p>
-        <div className={styles.featureFooter}><WorkResources item={item} /><a className={styles.archiveLink} href={`#${item.slug}`}>档案 <ArrowDown size={13} aria-hidden="true" /></a></div>
+        <div className={styles.featureFooter}><WorkResources item={item} /><Link className={styles.archiveLink} href={`/works/${item.slug}`}>了解详情 <ArrowUpRight size={13} aria-hidden="true" /></Link></div>
       </article>)}</div>
     </section>
     <section id="archive" className={styles.archive} aria-labelledby="archive-title">

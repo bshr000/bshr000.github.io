@@ -21,19 +21,23 @@
 .description { font-size: 12px; line-height: 1.9; margin: 16px 0; color: var(--muted); }
 .close { display: block; margin: 0 0 24px; padding: 8px 0; min-height: 44px; font-size: 12px; border: 0; background: transparent; color: var(--muted); }
 .journeyLink { display: flex; width: 100%; justify-content: space-between; font-size: 10px; padding: 8px 0 0; border: 0; background: transparent; text-align: left; }
-.journeys { padding: 0 5px; }
+.journeys { padding: 0 5px; display: grid; gap: 12px; }
 .journeyCard { width: 100%; border: 1px solid var(--line); background: var(--tm-surface); border-radius: 12px; padding: 0; overflow: hidden; text-align: left; display: flex; flex-direction: column; }
 .journeyCard:hover, .journeyCard.selected { border-color: var(--tm-strong); }
+.journeyCard.selected { background: var(--tm-selected); }
 .journeyCover { width: 100%; height: 140px; object-fit: cover; }
 .journeyMeta { display: flex; justify-content: space-between; width: 100%; padding: 18px 16px 11px; font-size: 10px; color: var(--muted); }
-.journeyCard strong { font-size: 19px; font-weight: 500; margin: 0 16px; }
+.journeyCard strong { font-size: 19px; font-weight: 500; margin: 0 16px 14px; }
 .subtitle { margin: 7px 16px 0; font-size: 10px; color: var(--muted); }
 .journeyDescription { margin: 18px 16px; font-size: 11px; line-height: 1.9; color: var(--muted); }
 .routeAction { width: 100%; display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding: 14px 16px; font-size: 10px; }
-.stops { padding: 8px 12px 0 30px; font-size: 10px; color: var(--muted); }
-.stops li { padding: 3px 0 3px 4px; }
-.stops button { width: 100%; text-align: left; background: transparent; border: 0; border-radius: 5px; padding: 8px; font-size: 11px; }
-.stops button span { display: block; font-size: 9px; color: var(--muted); margin-top: 4px; }
+.stops { list-style: none; padding: 8px 8px 0 16px; margin: 0; }
+.stops[hidden] { display: none; }
+.stops li { position: relative; padding: 0 0 0 4px; border-left: 1px solid var(--line); }
+.stops button { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 48px; text-align: left; background: transparent; border: 0; border-radius: 5px; padding: 8px; font-size: 12px; }
+.stopNumber { flex: 0 0 24px; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--tm-accent); }
+.stopName { min-width: 0; }
+.stopName small { display: block; font-size: 10px; color: var(--muted); margin-top: 3px; }
 .stops button:hover, .stops button[aria-pressed='true'] { background: var(--tm-selected); }
 @media (max-width: 1024px) { .card { gap: 10px; padding: 10px 8px; } .listHeading { padding-inline: 19px; } .cardText small { font-size: 8px; } }
 @media (max-width: 767px) { .list { overflow: visible; padding: 0 10px 14px; } .detail { max-height: none; padding: 24px; } .listHeading { padding: 24px 23px 17px; } .card { padding: 13px 12px; gap: 16px; } .cardText small { font-size: 10px; } .journeyCover { height: 180px; } }
@@ -43,3 +47,18 @@
 .detailEyebrow, .region, .journeyLink { font-size: 12px; }
 .description { font-size: 14px; }
 @media (max-width: 767px) { .detail { padding: 16px 20px calc(24px + env(safe-area-inset-bottom)); } .close { margin-bottom: 12px; } }
+
+.routeFilters { display: flex; gap: 6px; padding: 20px 16px 8px; }
+.routeFilters button, .routeBulk button, .routeActions button { background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; min-height: 40px; font-size: 12px; }
+.routeFilters button[aria-pressed="true"], .routeActions button[aria-pressed="true"] { background: var(--tm-selected); border-color: var(--tm-strong); }
+.routeBulk { display: flex; align-items: center; gap: 6px; padding: 4px 16px 14px; font-size: 11px; }
+.routeBulk > span { margin-right: auto; color: var(--muted); }
+.routeBulk button:disabled { opacity: .45; cursor: default; }
+.routeCard { border: 1px solid var(--line); border-radius: 10px; padding: 14px 12px; background: var(--tm-surface); }
+.routeVisible { background: var(--tm-selected); }
+.routeCard h2 { display: flex; align-items: center; gap: 9px; font-size: 17px; font-weight: 500; margin: 0; }
+.routeMeta { color: var(--muted); font-size: 12px; margin: 8px 0 12px; }
+.routeActions { display: flex; flex-wrap: wrap; gap: 6px; }
+.routeSwatch { display: inline-block; width: 22px; flex: 0 0 22px; border-top: 3px solid var(--route-color); }
+.routeSwatch[data-status="wishlist"] { border-top-style: dashed; }
+:global(html[data-theme="dark"]) .routeSwatch { border-top-color: var(--route-dark); }

@@ -18,7 +18,7 @@ export default function PlaceSidebar({ places, journeys, mode, selectedPlaceId, 
     }
   }, [selectedPlaceId, mode]);
   return <aside className={s.sidebar} aria-label={mode === 'cities' ? 'Places' : 'Journeys'}>
-    <div className={s.listHeading}><h2>{mode === 'cities' ? 'PLACES' : 'JOURNEYS'}</h2><span>{mode === 'cities' ? `${places.length} locations` : `${journeys.length} journey`}</span></div>
+    <div className={s.listHeading}><h2>{mode === 'cities' ? '地点' : '行程'}</h2><span>{mode === 'cities' ? `${places.length} 个地点` : `${journeys.length} 条行程`}</span></div>
     <div className={s.list} ref={listRef}>
       {mode === 'cities' ? places.map((place, index) => <PlaceCard key={place.id} place={place} index={index} selected={selectedPlaceId === place.id} hovered={hoveredPlaceId === place.id} onSelect={onSelect} onHover={onHover} />) : <JourneyList journeys={journeys} places={places} selectedJourneyId={selectedJourneyId} selectedPlaceId={selectedPlaceId} onJourney={onJourney} onPlace={onSelect} />}
     </div>

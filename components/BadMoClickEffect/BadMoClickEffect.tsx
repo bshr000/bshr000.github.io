@@ -41,7 +41,7 @@ export function BadMoClickEffect({
     const timers = timersRef.current;
 
     const handleClick = (event: MouseEvent) => {
-      if (event.detail === 0) {
+      if (event.detail === 0 || (event.target instanceof Element && event.target.closest("[data-badmo-pet]"))) {
         return;
       }
 

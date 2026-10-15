@@ -43,6 +43,11 @@
 .courseRow details { margin-top: 6px; }
 .courseRow summary { cursor: pointer; width: fit-content; color: var(--accent); }
 .courseRow details p { margin-top: 8px; color: var(--muted); }
+.courseActions { position: relative; margin-top: 6px; }
+.courseRow .courseActions details { margin-top: 0; }
+.courseActions summary { padding-right: 140px; }
+.transcriptLink { position: absolute; top: 0; left: 88px; display: inline-flex; align-items: center; gap: 5px; color: var(--accent); white-space: nowrap; }
+.transcriptLink:hover { text-decoration: underline; text-underline-offset: 3px; }
 .skillGroups { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); padding-top: 32px; gap: 32px; }
 .skillGroup + .skillGroup { padding-left: 32px; border-left: 1px solid var(--line); }
 .skillGroup h3 { font-size: 16px; font-weight: 500; }

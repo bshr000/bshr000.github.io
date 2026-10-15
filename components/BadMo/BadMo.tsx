@@ -14,18 +14,19 @@ import {
   BADMO_EVENTS,
   BADMO_SPRITE,
   DEFAULT_DIALOGUES,
-  SPRITE_ANIMATIONS,
+  ACTION_SEQUENCES,
   getFramePosition,
-  getLookFrame,
   getPageProfile,
   pickInteractionAction,
   type BadMoActionId,
   type BadMoMood,
 } from "./animations";
+import { usePetDrag } from "./usePetDrag";
+import { RotateCcw } from "lucide-react";
 import styles from "./BadMo.module.css";
 
 const DEFAULT_STORAGE_KEY = "badmo-interaction-count";
-const POINTER_REACTION_DISTANCE = 176;
+const POINTER_REACTION_DISTANCE = 120;
 
 export interface BadMoInteractionDetail {
   action: Exclude<BadMoActionId, "idle">;
@@ -95,7 +96,7 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
   const busyRef = useRef(false);
   const lookingRef = useRef(false);
   const interactionCountRef = useRef(0);
-  const previousPathRef = useRef(pathname);
+
   const previousInteractionRef = useRef<
     Exclude<BadMoActionId, "idle"> | undefined
   >(undefined);
@@ -105,6 +106,16 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
       spriteRef.current.style.backgroundPosition = getFramePosition(row, frame);
     }
   }, []);
+
+  const { draggingRef, suppressClickRef, resetPosition } = usePetDrag(rootRef, buttonRef, () => {
+    if (actionTimerRef.current !== null) window.clearTimeout(actionTimerRef.current);
+    busyRef.current = false;
+    lookingRef.current = false;
+    rootRef.current?.removeAttribute("data-near");
+    setActiveAction("idle");
+    setBubble(null);
+    setSpriteFrame(0, 0);
+  });
 
   const say = useCallback((message: string) => {
     if (bubbleTimerRef.current !== null) {
@@ -120,11 +131,8 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
 
   const play = useCallback(
     (action: Exclude<BadMoActionId, "idle">, message?: string) => {
-      if (actionTimerRef.current !== null) {
-        window.clearTimeout(actionTimerRef.current);
-      }
+      if (busyRef.current || draggingRef.current) return;
 
-      const definition = BADMO_ACTIONS[action];
       busyRef.current = true;
       lookingRef.current = false;
       rootRef.current?.removeAttribute("data-near");
@@ -136,15 +144,8 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
         say(message);
       }
 
-      actionTimerRef.current = window.setTimeout(() => {
-        busyRef.current = false;
-        setActiveAction("idle");
-        setAnimationNonce((value) => value + 1);
-        onActionChange?.("idle");
-        actionTimerRef.current = null;
-      }, definition.duration);
     },
-    [onActionChange, say, showDialogue],
+    [onActionChange, say, showDialogue, draggingRef],
   );
 
   useImperativeHandle(
@@ -166,106 +167,99 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
     }
   }, [interactionStorageKey]);
 
+  // One scheduler owns both frame playback and action completion.
   useEffect(() => {
-    const action = BADMO_ACTIONS[activeAction];
-    const animation = SPRITE_ANIMATIONS[action.sprite];
-    let currentFrame = 0;
+    let cancelled = false;
+    const schedule = (callback: () => void, delay: number) => {
+      actionTimerRef.current = window.setTimeout(() => {
+        if (!cancelled) callback();
+      }, delay);
+    };
+    const finish = () => {
+      busyRef.current = false;
+      setSpriteFrame(0, 0);
+      setActiveAction("idle");
+      onActionChange?.("idle");
+    };
+    setSpriteFrame(0, 0);
 
-    setSpriteFrame(animation.row, currentFrame);
-
-    if (reducedMotion || animation.fps <= 0 || animation.frames <= 1) {
-      return;
-    }
-
-    const interval = window.setInterval(() => {
-      if (activeAction === "idle" && lookingRef.current) {
-        return;
-      }
-
-      const nextFrame = currentFrame + 1;
-      currentFrame = nextFrame >= animation.frames
-        ? animation.loop
-          ? 0
-          : animation.frames - 1
-        : nextFrame;
-      setSpriteFrame(animation.row, currentFrame);
-    }, 1_000 / animation.fps);
-
-    return () => window.clearInterval(interval);
-  }, [activeAction, animationNonce, reducedMotion, setSpriteFrame]);
-
-  useEffect(() => {
     if (reducedMotion) {
-      return;
+      if (activeAction !== "idle") schedule(finish, 250);
+    } else if (activeAction === "idle") {
+      // Other idle cells contain isolated tail fragments. Keep the verified
+      // clean standing cell until a consistent blink sequence is available.
+      setSpriteFrame(0, 0);
+    } else {
+      const sequence = ACTION_SEQUENCES[activeAction];
+      let index = 0;
+      const advance = () => {
+        const step = sequence[index++];
+        if (!step || document.hidden) { finish(); return; }
+        setSpriteFrame(step.row, step.frame);
+        schedule(advance, step.hold);
+      };
+      advance();
     }
+    const onVisibility = () => {
+      if (!document.hidden) return;
+      if (actionTimerRef.current !== null) window.clearTimeout(actionTimerRef.current);
+      finish();
+      setAnimationNonce(value => value + 1);
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      cancelled = true;
+      if (actionTimerRef.current !== null) window.clearTimeout(actionTimerRef.current);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, [activeAction, animationNonce, reducedMotion, setSpriteFrame, onActionChange]);
 
-    let pointerX = 0;
-    let pointerY = 0;
-    let animationFrame = 0;
-
-    const reactToPointer = () => {
-      animationFrame = 0;
-
-      if (busyRef.current || !buttonRef.current) {
-        return;
+  useEffect(() => {
+    if (reducedMotion) return;
+    let dwell: number | undefined;
+    const reset = () => {
+      window.clearTimeout(dwell);
+      dwell = undefined;
+      const wasLooking = lookingRef.current;
+      lookingRef.current = false;
+      rootRef.current?.removeAttribute("data-near");
+      if (wasLooking && !busyRef.current) setSpriteFrame(0, 0);
+    };
+    const move = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse" || busyRef.current || draggingRef.current || !buttonRef.current) {
+        reset(); return;
       }
-
       const bounds = buttonRef.current.getBoundingClientRect();
-      const centerX = bounds.left + bounds.width / 2;
-      const centerY = bounds.top + bounds.height / 2;
-      const deltaX = pointerX - centerX;
-      const deltaY = pointerY - centerY;
-      const distance = Math.hypot(deltaX, deltaY);
-
-      if (distance <= POINTER_REACTION_DISTANCE) {
-        const look = getLookFrame(deltaX, deltaY);
-        const animation = SPRITE_ANIMATIONS[look.state];
+      const distance = Math.hypot(event.clientX - bounds.left - bounds.width / 2,
+        event.clientY - bounds.top - bounds.height / 2);
+      // Separate entry/exit radii avoid flickering along the boundary.
+      if (distance > (lookingRef.current ? 160 : POINTER_REACTION_DISTANCE)) {
+        reset(); return;
+      }
+      if (lookingRef.current || dwell !== undefined) return;
+      dwell = window.setTimeout(() => {
+        dwell = undefined;
+        if (busyRef.current || draggingRef.current || document.hidden) return;
         lookingRef.current = true;
         rootRef.current?.setAttribute("data-near", "true");
-        setSpriteFrame(animation.row, look.frame);
-        return;
-      }
-
-      if (lookingRef.current) {
-        lookingRef.current = false;
-        rootRef.current?.removeAttribute("data-near");
-        setSpriteFrame(SPRITE_ANIMATIONS.idle.row, 0);
-      }
+        // Same standing pose: acknowledge proximity without a full-body turn.
+        setSpriteFrame(0, 0);
+      }, 220);
     };
-
-    const handlePointerMove = (event: PointerEvent) => {
-      if (event.pointerType && event.pointerType !== "mouse") {
-        return;
-      }
-
-      pointerX = event.clientX;
-      pointerY = event.clientY;
-
-      if (animationFrame === 0) {
-        animationFrame = window.requestAnimationFrame(reactToPointer);
-      }
-    };
-
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-
+    window.addEventListener("pointermove", move, { passive: true });
+    document.documentElement.addEventListener("pointerleave", reset);
+    window.addEventListener("blur", reset);
+    window.addEventListener("scroll", reset, { passive: true });
+    document.addEventListener("visibilitychange", reset);
     return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      if (animationFrame !== 0) {
-        window.cancelAnimationFrame(animationFrame);
-      }
+      reset();
+      window.removeEventListener("pointermove", move);
+      document.documentElement.removeEventListener("pointerleave", reset);
+      window.removeEventListener("blur", reset);
+      window.removeEventListener("scroll", reset);
+      document.removeEventListener("visibilitychange", reset);
     };
-  }, [reducedMotion, setSpriteFrame]);
-
-  useEffect(() => {
-    if (previousPathRef.current === pathname) {
-      return;
-    }
-
-    previousPathRef.current = pathname;
-    if (!busyRef.current && pageProfile.routeAction && !reducedMotion) {
-      play(pageProfile.routeAction);
-    }
-  }, [pageProfile.routeAction, pathname, play, reducedMotion]);
+  }, [reducedMotion, setSpriteFrame, draggingRef]);
 
   useEffect(() => {
     return () => {
@@ -278,8 +272,12 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
     };
   }, []);
 
-  const handleInteraction = () => {
-    if (busyRef.current) {
+  const handleInteraction = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (suppressClickRef.current && event.detail !== 0) {
+      suppressClickRef.current = false;
+      return;
+    }
+    if (busyRef.current || draggingRef.current) {
       return;
     }
 
@@ -324,6 +322,7 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
     <div
       ref={rootRef}
       className={rootClassName}
+      data-badmo-pet
       data-action={activeAction}
       data-mood={mood}
       data-motion={actionDefinition.motion}
@@ -340,18 +339,21 @@ export const BadMo = forwardRef<BadMoHandle, BadMoProps>(function BadMo(
         type="button"
         aria-label="和坏墨 BadMo 互动"
         onClick={handleInteraction}
+        title="点击互动，按住拖动；聚焦后可用方向键移动"
       >
         <span className={styles.floatLayer} aria-hidden="true">
           <span
             ref={spriteRef}
             className={styles.sprite}
             style={{
+              backgroundPosition: getFramePosition(0, 0),
               backgroundImage: `url(${JSON.stringify(spriteSrc)})`,
               backgroundSize: `${BADMO_SPRITE.columns * 100}% ${BADMO_SPRITE.rows * 100}%`,
             }}
           />
         </span>
       </button>
+      <button type="button" className={styles.reset} onClick={resetPosition} aria-label="将 BadMo 放回右下角" title="回到右下角"><RotateCcw size={14} aria-hidden="true" /></button>
     </div>
   );
 });

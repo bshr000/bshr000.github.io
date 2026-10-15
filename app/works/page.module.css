@@ -25,7 +25,7 @@
 .featuredCard > p { color: var(--secondary); margin: 7px 0 16px; font-size: 13px; line-height: 1.8; }
 .featureFooter { margin-top: auto; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
 .resources { display: flex; gap: 8px; flex-wrap: wrap; }
-.resources a { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--rule); padding: 5px 9px; border-radius: 4px; font-size: 12px; }
+.resources a { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--rule, var(--color-border)); padding: 5px 9px; border-radius: 4px; font-size: 12px; }
 .resources a:hover { background: var(--rule); }
 .archiveLink { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; min-height: 32px; }
 .archive { scroll-margin-top: 20px; border-top: 1px solid var(--rule); padding-top: 30px; }
@@ -87,3 +87,17 @@
 @media (prefers-reduced-motion: reduce) {
   .page *, .page *::before, .page *::after { transition: none !important; animation: none !important; }
 }
+
+.publications { margin-top: 18px; }
+.publication { padding: 16px 0; border-top: 1px solid var(--rule, var(--color-border)); scroll-margin-top: 90px; }
+.publication h4 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; font-size: 15px; font-weight: 500; }
+.publication h4 span { color: var(--secondary, var(--color-text-secondary)); font-size: 11px; font-family: var(--font-mono); }
+.publication p { margin: 4px 0 0; font-size: 12px; line-height: 1.9; color: var(--secondary, var(--color-text-secondary)); overflow-wrap: anywhere; }
+.publication strong { color: var(--ink, var(--color-text-primary)); font-weight: 600; }
+.publication .resources { margin-top: 10px; }
+.copyApplication { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.copyApplication button { display: inline-flex; align-items: center; gap: 7px; padding: 5px 9px; border: 1px solid var(--rule, var(--color-border)); border-radius: 4px; color: inherit; background: transparent; font-size: 12px; cursor: pointer; }
+.copyApplication button:hover { background: var(--rule, var(--color-surface-subtle)); }
+.copyApplication button:focus-visible { outline: 2px solid var(--accent, var(--color-accent)); outline-offset: 3px; }
+.copyApplication > span { font-size: 11px; }
+.copyApplication input { max-width: 100%; background: var(--paper, var(--color-surface)); color: inherit; border: 1px solid var(--rule, var(--color-border)); padding: 5px; font-size: 12px; }

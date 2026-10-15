@@ -31,18 +31,10 @@
 
 .sprite {
   background-repeat: no-repeat;
-  transition: transform var(--duration-base) var(--ease-standard);
-  will-change: transform;
-}
+ }
 
-.button:hover .sprite,
-.root[data-near="true"] .sprite {
-  transform: scale(1.025);
-}
-
-.button:active .sprite {
-  transform: scale(.98);
-}
+.button { cursor: pointer; }
+.button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
 .bubble {
   max-width: min(13.5rem, calc(100vw - 2.5rem));
@@ -60,68 +52,6 @@
   text-wrap: pretty;
   backdrop-filter: blur(.75rem);
   animation: bubbleIn 220ms var(--ease-standard) both;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .root[data-action="idle"] .floatLayer {
-    animation: idleFloat 4.8s ease-in-out infinite;
-  }
-
-  .root[data-action="idle"] .sprite {
-    animation: idleBreath 3.6s ease-in-out infinite;
-  }
-
-  .root[data-motion="sway"] .floatLayer {
-    animation: sway 1.1s var(--ease-standard) both;
-  }
-
-  .root[data-motion="tilt"] .floatLayer {
-    animation: thoughtfulTilt 1.4s var(--ease-standard) both;
-  }
-}
-
-@keyframes idleFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-.2rem);
-  }
-}
-
-@keyframes idleBreath {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.012);
-  }
-}
-
-@keyframes sway {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  28% {
-    transform: rotate(-4deg);
-  }
-  62% {
-    transform: rotate(3.5deg);
-  }
-}
-
-@keyframes thoughtfulTilt {
-  0%,
-  100% {
-    transform: rotate(0deg) translateY(0);
-  }
-  45%,
-  70% {
-    transform: rotate(-2.5deg) translateY(-.08rem);
-  }
 }
 
 @keyframes bubbleIn {
@@ -169,3 +99,20 @@
     display: none;
   }
 }
+
+/* Keep the pet's anchor independent of dialogue and control dimensions. */
+.root { width: var(--badmo-width); height: auto; aspect-ratio: 192 / 208; display: block; }
+.button { cursor: grab; touch-action: none; user-select: none; height: 100%; }
+.root[data-dragging="true"] .button { cursor: grabbing; }
+.sprite { overflow: hidden; background-position: 0 0; }
+.root[data-near="true"] .button { filter: brightness(1.06); }
+.bubble { position: absolute; bottom: calc(100% + 8px); right: 0; width: max-content; margin: 0; }
+.root[data-bubble-side="right"] .bubble { right: auto; left: 0; }
+.root[data-bubble-below="true"] .bubble { bottom: auto; top: calc(100% + 8px); }
+.reset { position: absolute; right: 0; top: -28px; width: 26px; height: 26px; display: grid; place-items: center; pointer-events: auto; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); cursor: pointer; opacity: 0; }
+.root:hover .reset, .root:focus-within .reset { opacity: 1; }
+.reset:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.root[data-dragging="true"] .reset { visibility: hidden; }
+@media (hover: none) { .reset { opacity: 1; } }
+
+:global(html[data-badmo-tour="true"]) .root { display: none; }

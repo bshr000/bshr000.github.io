@@ -117,13 +117,15 @@ export const BADMO_EVENTS = {
   interaction: "badmo:interaction",
 } as const;
 
-const INTERACTION_ACTIONS: readonly Exclude<BadMoActionId, "idle">[] = [
-  "wave",
-  "jump",
-  "sway",
-  "ponder",
-  "review",
-];
+// Large jumps and seated poses stay available through the imperative API,
+// but ordinary clicks use the standing wave sequence.
+export const ACTION_SEQUENCES: Record<Exclude<BadMoActionId, "idle">, readonly { row: number; frame: number; hold: number }[]> = {
+  wave: [{ row: 0, frame: 0, hold: 160 }, { row: 3, frame: 0, hold: 140 }, { row: 3, frame: 1, hold: 240 }, { row: 3, frame: 2, hold: 160 }, { row: 3, frame: 3, hold: 180 }, { row: 3, frame: 0, hold: 140 }, { row: 0, frame: 0, hold: 180 }],
+  sway: [{ row: 0, frame: 0, hold: 500 }],
+  jump: [0, 1, 2, 3, 4].map(frame => ({ row: 4, frame, hold: 130 })).concat([{ row: 0, frame: 0, hold: 240 }]),
+  ponder: [0, 1, 0].map(frame => ({ row: 6, frame, hold: 280 })).concat([{ row: 0, frame: 0, hold: 220 }]),
+  review: [0, 1, 0].map(frame => ({ row: 8, frame, hold: 280 })).concat([{ row: 0, frame: 0, hold: 220 }]),
+};
 
 export function getPageProfile(pathname: string): BadMoPageProfile {
   if (pathname.startsWith("/works")) {
@@ -148,11 +150,7 @@ export function getPageProfile(pathname: string): BadMoPageProfile {
 export function pickInteractionAction(
   previous?: Exclude<BadMoActionId, "idle">,
 ): Exclude<BadMoActionId, "idle"> {
-  const choices = previous
-    ? INTERACTION_ACTIONS.filter((action) => action !== previous)
-    : INTERACTION_ACTIONS;
-
-  return choices[Math.floor(Math.random() * choices.length)] ?? "wave";
+  return previous === "wave" ? "sway" : "wave";
 }
 
 export function getFramePosition(row: number, frame: number): string {

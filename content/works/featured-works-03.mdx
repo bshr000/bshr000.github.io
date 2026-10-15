@@ -1,0 +1,42 @@
+---
+title: "Thinking With Search"
+description: "启元实验室九格大模型团队实习：参与超高分辨率遥感多工具智能体的基准构建、评测与训练。"
+kind: "innovation"
+category: "Internship · 启元实验室"
+year: "2026.04–至今"
+archive: false
+featuredOrder: 3
+subtitle: "MULTIMODAL AGENTS & BENCHMARK"
+cover: "/images/works/qiyuan-vqa-samples.png"
+coverAlt: "Geosearch-Bench 五个维度的专家级 VQA 样本展示"
+coverNote: "实习工作 · 专家级 VQA 样本"
+tags: ["VLM", "Geosearch-Bench", "Agentic RL", "Remote sensing"]
+---
+
+## 实习方向
+
+2026 年 4 月起，在启元实验室九格大模型团队参与多模态大模型及目标感知方向的工作。Thinking With Search 面向 UHR 大画幅遥感影像，探索多工具智能体 VLM 及配套 Search VQA benchmark。
+
+项目围绕图像局部放大、图像检索和文本检索等工具，结合 SFT 冷启动与 Agentic RL 开展研究。
+
+## Geosearch-Bench 构建
+
+参与三层任务体系论证，涵盖 3 类核心能力、8 类任务结构及 20 余个测试维度。重点负责以下五个维度的专家级样本生成，并整理推理依据标注：
+
+- 空间约束验证（Spatial Constraint Verification）。
+- 实体属性检索（Entity Attribute Retrieval）。
+- 属性约束验证（Attribute Constraint Verification）。
+- 自然成因归因（Natural Cause Attribution）。
+- 规模决策（Scale-Based Decision）。
+
+样本构建流程包括 UHR 上下文调研、候选实体挖掘、搜索可达性验证、Gemini 双盲难度筛选，以及属性挖掘、VQA 构建和质控入库。
+
+## Baseline 评测与训练
+
+使用 Qwen3-VL-7B 在 XLRS-lite、LRS-GRO、RSHR 上进行 pass@1 与 pass@32 测试，比较单次回答与多次采样的表现，用于分析已有 benchmark 的难度与区分能力。
+
+参与 SenseNova MARS 等多工具智能体 VLM 的复现与训练。相关技术包括 Qwen3-VL、Gemini 3.1、Agentic RL、GEE Pro 和 SGLang。
+
+## 工作概览
+
+![启元实验室实习工作概览](/images/works/qiyuan-internship.png)

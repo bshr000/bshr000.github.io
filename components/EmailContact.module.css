@@ -1,0 +1,16 @@
+.trigger { min-height: 36px; border: 0; padding: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.trigger:hover { color: var(--color-accent); }
+.dialog { margin: auto; width: min(400px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 24px; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-surface); color: var(--color-text-primary); box-shadow: var(--shadow-overlay); font-family: var(--font-sans); text-align: left; letter-spacing: normal; }
+.dialog::backdrop { background: rgb(0 0 0 / .45); }
+.heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.heading h2 { margin: 0; font-size: 18px; font-weight: 500; }
+.close { display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 4px; background: transparent; color: var(--color-text-secondary); cursor: pointer; }
+.close:hover { background: var(--color-surface-subtle); }
+.address { display: block; width: 100%; min-width: 0; padding: 12px; border: 1px solid var(--color-border); border-radius: 6px; background: var(--color-surface-subtle); color: var(--color-text-primary); font-size: 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.actions button, .actions a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 6px; background: transparent; color: var(--color-text-primary); font-size: 13px; cursor: pointer; text-decoration: none; }
+.actions button:hover, .actions a:hover { background: var(--color-surface-subtle); }
+.status { min-height: 20px; margin: 12px 0 0; color: var(--color-text-secondary); font-size: 12px; line-height: 1.6; }
+.trigger:focus-visible, .dialog button:focus-visible, .dialog a:focus-visible, .address:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+@media (max-width: 639px) { .trigger { min-height: 44px; } }

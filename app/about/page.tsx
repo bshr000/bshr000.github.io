@@ -62,7 +62,10 @@ export default function AboutPage() {
                 <h3>{item.school}</h3><p className={styles.schoolEn}>{item.schoolEn}</p>
                 <p className={styles.department}>{item.department}</p>
                 <div className={styles.courseRow}><span>主要课程</span><div><p>{item.courses.slice(0, 3).join(" · ")}</p>
-                  {item.courses.length > 3 && <details><summary>更多课程</summary><p>{item.courses.slice(3).join(" · ")}</p></details>}
+                  <div className={styles.courseActions}>
+                    {item.courses.length > 3 && <details><summary>更多课程</summary><p>{item.courses.slice(3).join(" · ")}</p></details>}
+                    <a className={styles.transcriptLink} href={withBasePath(item.transcript)} target="_blank" rel="noopener noreferrer" aria-label={`查看${item.degree}成绩证明 PDF（新窗口）`}>成绩证明 PDF <ArrowUpRight size={13} aria-hidden="true" /></a>
+                  </div>
                 </div></div>
                 <div className={styles.courseRow}><span>荣誉奖励</span><p>{Array.from(new Set(item.rewards)).join(" · ")}</p></div>
               </div>
