@@ -44,6 +44,7 @@ export interface BaseContent {
   sortDate?: string;
   updated?: string;
   year?: string;
+  endYear?: string;
   category?: string;
   tags: string[];
   cover?: string;

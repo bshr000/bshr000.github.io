@@ -2,7 +2,7 @@ import s from './Places.module.css';
 export type Mode = 'cities' | 'journeys';
 export default function PlacesHeader({ count, journeyCount, mode, onMode }: { count: number; journeyCount: number; mode: Mode; onMode: (mode: Mode) => void }) {
   return <header className={s.header}>
-    <div className={s.heading}><h1>Places I&apos;ve Been<span>.</span></h1><p>A map of places, journeys, and memories.</p></div>
+    <div className={s.heading}><h1>Places &amp; Journeys<span>.</span></h1><p><em>Where I’ve been. Where I dream of going.</em></p></div>
     <div className={s.headerBottom}>
       <div className={s.tabs} role="group" aria-label="地图模式">
         <button type="button" aria-pressed={mode === 'cities'} onClick={() => onMode('cities')} className={mode === 'cities' ? s.activeTab : ''}>地点 <span>{count}</span></button>

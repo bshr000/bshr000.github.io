@@ -31,40 +31,33 @@ export default function JourneyPage() {
       <section className={`container ${styles.archive}`} aria-label="Memory timeline">
         {items.length > 0 ? (
           <div className={styles.timeline}>
+            <div className={styles.continuation}>
+              <h2>To Be Continued.</h2>
+            </div>
             {items.map((item, index) => {
               const side = index % 2 === 0 ? "left" : "right";
-              const current = index === 0;
-              const date = item.date ?? item.year ?? "";
               const images = getJourneyPreviewImages(item);
               const gallery = getJourneyGallery(item.slug);
               const story = getJourneyStory(item.slug);
               const galleryHref = gallery ? `/journey/${item.slug}/gallery` : undefined;
-              const showCurrentLabel = current && date.trim().toLowerCase() !== "now";
 
               return (
                 <article
                   id={`memory-${item.slug}`}
                   className={styles.memoryEntry}
                   data-side={side}
-                  data-variant={index % 3}
+                  data-latest={index === 0}
                   key={item.slug}
                 >
                   <span
-                    className={`${styles.marker} ${current ? styles.currentMarker : ""}`}
+                    className={`${styles.marker} ${index === 0 ? styles.currentMarker : ""}`}
                     aria-hidden="true"
                   />
 
+                  <time className={styles.year} dateTime={item.endYear ?? item.year}>
+                    {item.endYear ?? item.year}
+                  </time>
                   <div className={styles.memoryContent}>
-                    {(date || showCurrentLabel) && (
-                      <div className={styles.dateRow}>
-                        {date && (
-                          <time className={styles.date} dateTime={item.sortDate}>
-                            {date}
-                          </time>
-                        )}
-                        {showCurrentLabel && <span className={styles.currentLabel}>Now</span>}
-                      </div>
-                    )}
                     {item.location && <p className={styles.location}>{item.location}</p>}
                     <h2>{item.title}</h2>
 
@@ -106,8 +99,11 @@ export default function JourneyPage() {
                 </article>
               );
             })}
+            <div className={styles.origin}>
+              <span aria-hidden="true" />
+              <time dateTime={items[items.length - 1].year}>{items[items.length - 1].year}</time>
+            </div>
 
-            <p className={styles.continuation}>The rest is still being written.</p>
           </div>
         ) : (
           <div className={styles.emptyState}>

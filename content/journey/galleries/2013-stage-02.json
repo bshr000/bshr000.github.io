@@ -1,202 +1,300 @@
 {
-  "images": [
+  "presentation": "chapters",
+  "label": "初中",
+  "introduction": "从镜头前的少年，到身边的人、路旁的花和山间的风景。沿着留下来的照片，翻阅临港二中时期的生活。",
+  "coverImages": [
+    "/images/journey/初中/初中1.webp",
+    "/images/journey/初中/初中23.webp",
+    "/images/journey/初中/初中6.webp"
+  ],
+  "sections": [
     {
-      "src": "/images/journey/初中/初中1.webp",
-      "alt": "临港二中，照片 001",
-      "width": 144,
-      "height": 226
+      "title": "镜头前的少年",
+      "description": "姿势和表情各不相同，同一段年纪留下了许多种模样。",
+      "images": [
+        {
+          "src": "/images/journey/初中/初中2.webp",
+          "alt": "室内的留影，手停在脸旁",
+          "caption": "室内的留影，手停在脸旁",
+          "width": 240,
+          "height": 320,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中3.webp",
+          "alt": "抱着手臂的留影",
+          "caption": "抱着手臂的留影",
+          "width": 240,
+          "height": 320,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中4.webp",
+          "alt": "向镜头抬起手",
+          "caption": "向镜头抬起手",
+          "width": 240,
+          "height": 320,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中5.webp",
+          "alt": "站在镜头前",
+          "caption": "站在镜头前",
+          "width": 240,
+          "height": 320,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中11.webp",
+          "alt": "衣柜旁的留影",
+          "caption": "衣柜旁的留影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中12.webp",
+          "alt": "靠近镜头的面孔",
+          "caption": "靠近镜头的面孔",
+          "width": 480,
+          "height": 640,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中19.webp",
+          "alt": "镜子中的留影",
+          "caption": "镜子中的留影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中21.webp",
+          "alt": "红色连帽衣的留影",
+          "caption": "红色连帽衣的留影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        }
+      ]
     },
     {
-      "src": "/images/journey/初中/初中2.webp",
-      "alt": "临港二中，照片 002",
-      "width": 144,
-      "height": 226
+      "title": "身边的人与日常",
+      "description": "一起坐下的片刻、房间里的身影，还有院子里的一只小狗。",
+      "images": [
+        {
+          "src": "/images/journey/初中/初中6.webp",
+          "alt": "一起坐下的合影",
+          "caption": "一起坐下的合影",
+          "width": 853,
+          "height": 640,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/初中/初中7.webp",
+          "alt": "同坐在房间里的片刻",
+          "caption": "同坐在房间里的片刻",
+          "width": 853,
+          "height": 640,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中8.webp",
+          "alt": "院子里的小狗",
+          "caption": "院子里的小狗",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中9.webp",
+          "alt": "房间里俯身的身影",
+          "caption": "房间里俯身的身影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中10.webp",
+          "alt": "玩具旁的小朋友",
+          "caption": "玩具旁的小朋友",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中29.webp",
+          "alt": "红色立柱旁的合影",
+          "caption": "红色立柱旁的合影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中30.webp",
+          "alt": "坐下来的一刻",
+          "caption": "坐下来的一刻",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        }
+      ]
     },
     {
-      "src": "/images/journey/初中/初中3.webp",
-      "alt": "临港二中，照片 003",
-      "width": 144,
-      "height": 226
+      "title": "花开与路过",
+      "description": "花树、路边的植物、向前走的背影，以及天空中的风筝。",
+      "images": [
+        {
+          "src": "/images/journey/初中/初中1.webp",
+          "alt": "花树旁的少年",
+          "caption": "花树旁的少年",
+          "width": 640,
+          "height": 853,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/初中/初中13.webp",
+          "alt": "坡地上的黄色小花",
+          "caption": "坡地上的黄色小花",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中14.webp",
+          "alt": "花坛里的红与粉",
+          "caption": "花坛里的红与粉",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中15.webp",
+          "alt": "一朵粉色的花",
+          "caption": "一朵粉色的花",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中16.webp",
+          "alt": "盛开的红色花朵",
+          "caption": "盛开的红色花朵",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中17.webp",
+          "alt": "枝头的粉色花朵",
+          "caption": "枝头的粉色花朵",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中18.webp",
+          "alt": "泥土中生长的植物",
+          "caption": "泥土中生长的植物",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中20.webp",
+          "alt": "沿着路向前走的背影",
+          "caption": "沿着路向前走的背影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中31.webp",
+          "alt": "道路上方的风筝",
+          "caption": "道路上方的风筝",
+          "width": 853,
+          "height": 640,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中32.webp",
+          "alt": "灰色天空中的风筝",
+          "caption": "灰色天空中的风筝",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中33.webp",
+          "alt": "风筝与远处的道路",
+          "caption": "风筝与远处的道路",
+          "width": 853,
+          "height": 640,
+          "featured": false
+        }
+      ]
     },
     {
-      "src": "/images/journey/初中/初中4.webp",
-      "alt": "临港二中，照片 004",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中5.webp",
-      "alt": "临港二中，照片 005",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中6.webp",
-      "alt": "临港二中，照片 006",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中7.webp",
-      "alt": "临港二中，照片 007",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中8.webp",
-      "alt": "临港二中，照片 008",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中9.webp",
-      "alt": "临港二中，照片 009",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中10.webp",
-      "alt": "临港二中，照片 010",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中11.webp",
-      "alt": "临港二中，照片 011",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中12.webp",
-      "alt": "临港二中，照片 012",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中13.webp",
-      "alt": "临港二中，照片 013",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中14.webp",
-      "alt": "临港二中，照片 014",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中15.webp",
-      "alt": "临港二中，照片 015",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中16.webp",
-      "alt": "临港二中，照片 016",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中17.webp",
-      "alt": "临港二中，照片 017",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中18.webp",
-      "alt": "临港二中，照片 018",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中19.webp",
-      "alt": "临港二中，照片 019",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中20.webp",
-      "alt": "临港二中，照片 020",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中21.webp",
-      "alt": "临港二中，照片 021",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中22.webp",
-      "alt": "临港二中，照片 022",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中23.webp",
-      "alt": "临港二中，照片 023",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中24.webp",
-      "alt": "临港二中，照片 024",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中25.webp",
-      "alt": "临港二中，照片 025",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中26.webp",
-      "alt": "临港二中，照片 026",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中27.webp",
-      "alt": "临港二中，照片 027",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中28.webp",
-      "alt": "临港二中，照片 028",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中29.webp",
-      "alt": "临港二中，照片 029",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中30.webp",
-      "alt": "临港二中，照片 030",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中31.webp",
-      "alt": "临港二中，照片 031",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中32.webp",
-      "alt": "临港二中，照片 032",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/初中/初中33.webp",
-      "alt": "临港二中，照片 033",
-      "width": 144,
-      "height": 226
+      "title": "走到更远的地方",
+      "description": "沿山路走一段，在栏杆旁停下来，再望向水面与远处。",
+      "images": [
+        {
+          "src": "/images/journey/初中/初中22.webp",
+          "alt": "松树旁的山间步道",
+          "caption": "松树旁的山间步道",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中23.webp",
+          "alt": "水边岩石上的身影",
+          "caption": "水边岩石上的身影",
+          "width": 853,
+          "height": 640,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/初中/初中24.webp",
+          "alt": "岩石上的停留",
+          "caption": "岩石上的停留",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中25.webp",
+          "alt": "从岩石上望向远处",
+          "caption": "从岩石上望向远处",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中26.webp",
+          "alt": "红色栏杆旁的留影",
+          "caption": "红色栏杆旁的留影",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中27.webp",
+          "alt": "玻璃步道上的留影",
+          "caption": "玻璃步道上的留影",
+          "width": 640,
+          "height": 1129,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/初中/初中28.webp",
+          "alt": "山路、栏杆与松树",
+          "caption": "山路、栏杆与松树",
+          "width": 640,
+          "height": 853,
+          "featured": false
+        }
+      ]
     }
   ]
 }

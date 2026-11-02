@@ -1,76 +1,126 @@
 {
-  "images": [
+  "presentation": "chapters",
+  "label": "高中",
+  "introduction": "操场上的合影、车窗旁的片刻，以及课余留下的画面。它们共同组成了山东省临沂第一中学这一页。",
+  "coverImages": [
+    "/images/journey/高中/高中8.webp",
+    "/images/journey/高中/高中1.webp",
+    "/images/journey/高中/高中12.webp"
+  ],
+  "sections": [
     {
-      "src": "/images/journey/高中/高中1.webp",
-      "alt": "临沂一中，照片 001",
-      "width": 144,
-      "height": 226
+      "title": "一起站在镜头里",
+      "description": "合影留下许多人的面孔，另一张照片则记下了迷彩服的模样。",
+      "images": [
+        {
+          "src": "/images/journey/高中/高中8.webp",
+          "alt": "操场上的集体合影",
+          "caption": "操场上的集体合影",
+          "width": 963,
+          "height": 640,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/高中/高中9.webp",
+          "alt": "集体合影的另一张记录",
+          "caption": "集体合影的另一张记录",
+          "width": 963,
+          "height": 640,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/高中/高中7.webp",
+          "alt": "身穿迷彩服的室内留影",
+          "caption": "身穿迷彩服的室内留影",
+          "width": 960,
+          "height": 1280,
+          "featured": false
+        }
+      ]
     },
     {
-      "src": "/images/journey/高中/高中2.webp",
-      "alt": "临沂一中，照片 002",
-      "width": 144,
-      "height": 226
+      "title": "车窗旁的片刻",
+      "description": "相似的背景里，目光和表情有细微的变化。把这一组照片留在一起。",
+      "images": [
+        {
+          "src": "/images/journey/高中/高中1.webp",
+          "alt": "车窗旁的留影（一）",
+          "caption": "车窗旁的留影（一）",
+          "width": 1080,
+          "height": 1440,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/高中/高中2.webp",
+          "alt": "车窗旁的留影（二）",
+          "caption": "车窗旁的留影（二）",
+          "width": 1080,
+          "height": 1440,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/高中/高中3.webp",
+          "alt": "车窗旁的留影（三）",
+          "caption": "车窗旁的留影（三）",
+          "width": 1080,
+          "height": 1440,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/高中/高中4.webp",
+          "alt": "车窗旁的留影（四）",
+          "caption": "车窗旁的留影（四）",
+          "width": 1080,
+          "height": 1440,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/高中/高中5.webp",
+          "alt": "车窗旁的留影（五）",
+          "caption": "车窗旁的留影（五）",
+          "width": 1080,
+          "height": 1440,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/高中/高中6.webp",
+          "alt": "车窗旁的留影（六）",
+          "caption": "车窗旁的留影（六）",
+          "width": 1080,
+          "height": 1440,
+          "featured": false
+        },
+        {
+          "src": "/images/journey/高中/高中10.webp",
+          "alt": "车内的近景留影",
+          "caption": "车内的近景留影",
+          "width": 1080,
+          "height": 1440,
+          "featured": false
+        }
+      ]
     },
     {
-      "src": "/images/journey/高中/高中3.webp",
-      "alt": "临沂一中，照片 003",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中4.webp",
-      "alt": "临沂一中，照片 004",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中5.webp",
-      "alt": "临沂一中，照片 005",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中6.webp",
-      "alt": "临沂一中，照片 006",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中7.webp",
-      "alt": "临沂一中，照片 007",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中8.webp",
-      "alt": "临沂一中，照片 008",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中9.webp",
-      "alt": "临沂一中，照片 009",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中10.webp",
-      "alt": "临沂一中，照片 010",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中11.webp",
-      "alt": "临沂一中，照片 011",
-      "width": 144,
-      "height": 226
-    },
-    {
-      "src": "/images/journey/高中/高中12.webp",
-      "alt": "临沂一中，照片 012",
-      "width": 144,
-      "height": 226
+      "title": "课余留下的画面",
+      "description": "夜色中的篮球架，与一张游戏界面截图，也是那段生活的一部分。",
+      "images": [
+        {
+          "src": "/images/journey/高中/高中12.webp",
+          "alt": "夜色中的篮球架",
+          "caption": "夜色中的篮球架",
+          "width": 640,
+          "height": 853,
+          "featured": true
+        },
+        {
+          "src": "/images/journey/高中/高中11.webp",
+          "alt": "留下来的游戏界面",
+          "caption": "留下来的游戏界面",
+          "width": 541,
+          "height": 444,
+          "featured": false
+        }
+      ]
     }
   ]
 }
